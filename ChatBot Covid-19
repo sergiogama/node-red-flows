@@ -7,30 +7,9 @@
       "info": ""
     },
     {
-      "id": "dd0ebb2.d216248",
-      "type": "tab",
-      "label": "Modulo2",
-      "disabled": false,
-      "info": ""
-    },
-    {
-      "id": "ebdb5b78.5c80e8",
-      "type": "tab",
-      "label": "Modulo3",
-      "disabled": false,
-      "info": ""
-    },
-    {
       "id": "98515e1f.b5069",
       "type": "tab",
       "label": "Modulo4",
-      "disabled": false,
-      "info": ""
-    },
-    {
-      "id": "d922ce27.2d249",
-      "type": "tab",
-      "label": "Modulo5",
       "disabled": false,
       "info": ""
     },
@@ -59,13 +38,6 @@
       "id": "8530800f.d1c77",
       "type": "tab",
       "label": "Test the System",
-      "disabled": false,
-      "info": ""
-    },
-    {
-      "id": "d831d1a4.8d523",
-      "type": "tab",
-      "label": "Flow 1",
       "disabled": false,
       "info": ""
     },
@@ -2068,98 +2040,6 @@
         [
           "8cb667f4.f02cb8",
           "c29d87c7.648478"
-        ]
-      ]
-    },
-    {
-      "id": "5bce6238.41b40c",
-      "type": "inject",
-      "z": "d831d1a4.8d523",
-      "name": "",
-      "topic": "",
-      "payload": "SI",
-      "payloadType": "str",
-      "repeat": "",
-      "crontab": "",
-      "once": false,
-      "onceDelay": 0.1,
-      "x": 150,
-      "y": 200,
-      "wires": [
-        [
-          "b4df25a4.93e5e8"
-        ]
-      ]
-    },
-    {
-      "id": "b4df25a4.93e5e8",
-      "type": "watson-assistant-v2",
-      "z": "d831d1a4.8d523",
-      "name": "",
-      "service-endpoint": "https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/0741c9a9-27ad-4f9b-967f-9799aefecb34",
-      "assistant_id": "d16d6cbe-4d0d-4c31-939c-0c52eaf41059",
-      "debug": false,
-      "restart": false,
-      "return_context": true,
-      "alternate_intents": false,
-      "multisession": false,
-      "timeout": "",
-      "optout-learning": false,
-      "x": 340,
-      "y": 280,
-      "wires": [
-        [
-          "4267d1fe.ef368"
-        ]
-      ]
-    },
-    {
-      "id": "4267d1fe.ef368",
-      "type": "function",
-      "z": "d831d1a4.8d523",
-      "name": "",
-      "func": "\nreturn msg;",
-      "outputs": 1,
-      "noerr": 0,
-      "x": 520,
-      "y": 220,
-      "wires": [
-        [
-          "34f2c0ff.35afb"
-        ]
-      ]
-    },
-    {
-      "id": "34f2c0ff.35afb",
-      "type": "debug",
-      "z": "d831d1a4.8d523",
-      "name": "",
-      "active": true,
-      "tosidebar": true,
-      "console": false,
-      "tostatus": false,
-      "complete": "false",
-      "x": 700,
-      "y": 180,
-      "wires": []
-    },
-    {
-      "id": "977a8732.07c998",
-      "type": "inject",
-      "z": "d831d1a4.8d523",
-      "name": "",
-      "topic": "",
-      "payload": "Quanto custo o curso",
-      "payloadType": "str",
-      "repeat": "",
-      "crontab": "",
-      "once": false,
-      "onceDelay": 0.1,
-      "x": 180,
-      "y": 120,
-      "wires": [
-        [
-          "b4df25a4.93e5e8"
         ]
       ]
     },
