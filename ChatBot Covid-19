@@ -1,0 +1,2186 @@
+[
+    {
+      "id": "ec39e4cb.f2c8e8",
+      "type": "tab",
+      "label": "Modulo1",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "dd0ebb2.d216248",
+      "type": "tab",
+      "label": "Modulo2",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "ebdb5b78.5c80e8",
+      "type": "tab",
+      "label": "Modulo3",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "98515e1f.b5069",
+      "type": "tab",
+      "label": "Modulo4",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "d922ce27.2d249",
+      "type": "tab",
+      "label": "Modulo5",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "f2c05422.6bb658",
+      "type": "tab",
+      "label": "Política de privacidade",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "b3e1fd0f.c086d",
+      "type": "tab",
+      "label": "BotCareYou via Twitter",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "d1b654df.803cd8",
+      "type": "tab",
+      "label": "DashBoard",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "8530800f.d1c77",
+      "type": "tab",
+      "label": "Test the System",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "d831d1a4.8d523",
+      "type": "tab",
+      "label": "Flow 1",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "dcaca7a7.ff54c8",
+      "type": "dashDB",
+      "z": "",
+      "hostname": "dashdb-txn-flex-yp-dal13-43.services.dal.bluemix.net",
+      "db": "BLUDB",
+      "port": "50000",
+      "name": "DB2"
+    },
+    {
+      "id": "4280616c.73b2c",
+      "type": "google-api-config",
+      "z": ""
+    },
+    {
+      "id": "6d3dc7.25f93238",
+      "type": "twitter-credentials",
+      "z": "",
+      "screen_name": "sergiorggama"
+    },
+    {
+      "id": "8fb1342e.e503e8",
+      "type": "twitter-credentials",
+      "z": "",
+      "screen_name": "botcareyou1"
+    },
+    {
+      "id": "1c96a886.544667",
+      "type": "ui_tab",
+      "z": "",
+      "name": "COVID-19",
+      "icon": "dashboard",
+      "disabled": false,
+      "hidden": false
+    },
+    {
+      "id": "39c7eed4.a092e2",
+      "type": "ui_group",
+      "z": "",
+      "name": "Maiores indices de mortalidade",
+      "tab": "1c96a886.544667",
+      "order": 1,
+      "disp": true,
+      "width": "6",
+      "collapse": false
+    },
+    {
+      "id": "9caf0ad7.bd2c08",
+      "type": "ui_base",
+      "theme": {
+        "name": "theme-dark",
+        "lightTheme": {
+          "default": "#0094CE",
+          "baseColor": "#0094CE",
+          "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+          "edited": true,
+          "reset": false
+        },
+        "darkTheme": {
+          "default": "#097479",
+          "baseColor": "#097479",
+          "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+          "edited": true,
+          "reset": false
+        },
+        "customTheme": {
+          "name": "Untitled Theme 1",
+          "default": "#4B7930",
+          "baseColor": "#4B7930",
+          "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+        },
+        "themeState": {
+          "base-color": {
+            "default": "#097479",
+            "value": "#097479",
+            "edited": false
+          },
+          "page-titlebar-backgroundColor": {
+            "value": "#097479",
+            "edited": false
+          },
+          "page-backgroundColor": {
+            "value": "#111111",
+            "edited": false
+          },
+          "page-sidebar-backgroundColor": {
+            "value": "#000000",
+            "edited": false
+          },
+          "group-textColor": {
+            "value": "#0eb8c0",
+            "edited": false
+          },
+          "group-borderColor": {
+            "value": "#555555",
+            "edited": false
+          },
+          "group-backgroundColor": {
+            "value": "#333333",
+            "edited": false
+          },
+          "widget-textColor": {
+            "value": "#eeeeee",
+            "edited": false
+          },
+          "widget-backgroundColor": {
+            "value": "#097479",
+            "edited": false
+          },
+          "widget-borderColor": {
+            "value": "#333333",
+            "edited": false
+          },
+          "base-font": {
+            "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+          }
+        },
+        "angularTheme": {
+          "primary": "indigo",
+          "accents": "blue",
+          "warn": "red",
+          "background": "grey"
+        }
+      },
+      "site": {
+        "name": "Node-RED Dashboard",
+        "hideToolbar": "false",
+        "allowSwipe": "false",
+        "lockMenu": "false",
+        "allowTempTheme": "true",
+        "dateFormat": "DD/MM/YYYY",
+        "sizes": {
+          "sx": 48,
+          "sy": 48,
+          "gx": 6,
+          "gy": 6,
+          "cx": 6,
+          "cy": 6,
+          "px": 0,
+          "py": 0
+        }
+      }
+    },
+    {
+      "id": "6d622af8.bfbec4",
+      "type": "MySQLdatabase",
+      "z": "",
+      "name": "",
+      "host": "sl-us-south-1-portal.52.dblayer.com",
+      "port": "28635",
+      "db": "estoque",
+      "tz": ""
+    },
+    {
+      "id": "a822f5c4.c2ac88",
+      "type": "websocket-listener",
+      "z": "8530800f.d1c77",
+      "path": "/ws/maratona",
+      "wholemsg": "false"
+    },
+    {
+      "id": "f2f2649a.0d0d98",
+      "type": "debug",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 750,
+      "y": 40,
+      "wires": []
+    },
+    {
+      "id": "33622f3e.3aa71",
+      "type": "natural-language-understanding",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "categories": false,
+      "limitcategories": "3",
+      "concepts": false,
+      "maxconcepts": "8",
+      "doc-emotion": false,
+      "doc-emotion-target": "",
+      "doc-sentiment": false,
+      "doc-sentiment-target": "",
+      "entity": true,
+      "entity-emotion": false,
+      "entity-sentiment": false,
+      "maxentities": "50",
+      "keyword": false,
+      "keyword-emotion": false,
+      "keyword-sentiment": false,
+      "maxkeywords": "50",
+      "metadata": false,
+      "relation": false,
+      "semantic": false,
+      "semantic-entities": false,
+      "semantic-keywords": false,
+      "maxsemantics": "50",
+      "limittextcharacters": "0",
+      "syntax": false,
+      "syntax-sentences": false,
+      "syntax-tokens-lemma": false,
+      "syntax-tokens-pos": false,
+      "service-endpoint": "",
+      "x": 340,
+      "y": 100,
+      "wires": [
+        [
+          "f2f2649a.0d0d98",
+          "bb2c84a7.93cc38"
+        ]
+      ]
+    },
+    {
+      "id": "3adb3f8d.97da8",
+      "type": "function",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "Modelo",
+      "func": "msg.nlu_options=\n{\"entity_model\":\"4c59cfa7-3372-4989-9725-a3ca0ea92509\",\n    \"relations_model\":\"4c59cfa7-3372-4989-9725-a3ca0ea92509\"\n};\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 480,
+      "y": 40,
+      "wires": [
+        [
+          "33622f3e.3aa71"
+        ]
+      ]
+    },
+    {
+      "id": "9d960f63.a9a48",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "select max(DATE),TYPE, SUM(CASES)  from BLUADMIN.COVID \nwhere COUNTRY = 'US' and TYPE = 'Confirmed'\ngroup by COUNTRY,TYPE,DATE\nORDER BY DATE DESC",
+      "params": "",
+      "name": "",
+      "x": 360,
+      "y": 249,
+      "wires": [
+        [
+          "233a9d0d.665a82"
+        ]
+      ]
+    },
+    {
+      "id": "38e80a49.e6f876",
+      "type": "inject",
+      "z": "98515e1f.b5069",
+      "name": "REGISTROS BRASIL",
+      "topic": "",
+      "payload": "",
+      "payloadType": "date",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 160,
+      "y": 249,
+      "wires": [
+        [
+          "9d960f63.a9a48"
+        ]
+      ]
+    },
+    {
+      "id": "233a9d0d.665a82",
+      "type": "debug",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 570,
+      "y": 249,
+      "wires": []
+    },
+    {
+      "id": "ade57ffd.a9bdb",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "DELETE FROM BLUADMIN.COVID WHERE 1 = 1",
+      "params": "",
+      "name": "",
+      "x": 360,
+      "y": 288,
+      "wires": [
+        [
+          "233a9d0d.665a82"
+        ]
+      ]
+    },
+    {
+      "id": "d3487a2.3de4488",
+      "type": "inject",
+      "z": "98515e1f.b5069",
+      "name": "APAGAR DADOS",
+      "topic": "",
+      "payload": "",
+      "payloadType": "date",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 180,
+      "y": 288,
+      "wires": [
+        [
+          "ade57ffd.a9bdb"
+        ]
+      ]
+    },
+    {
+      "id": "cb0de8d7.ed73d8",
+      "type": "inject",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "topic": "",
+      "payload": "",
+      "payloadType": "date",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 105,
+      "y": 62,
+      "wires": [
+        [
+          "35882be8.2cc744"
+        ]
+      ]
+    },
+    {
+      "id": "35882be8.2cc744",
+      "type": "http request",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "method": "GET",
+      "ret": "txt",
+      "paytoqs": false,
+      "url": "https://download.data.world/s/gfudb67fnvulaijhcmfvkkdqihehck",
+      "tls": "",
+      "persist": false,
+      "proxy": "",
+      "authType": "",
+      "x": 259,
+      "y": 62,
+      "wires": [
+        [
+          "34b77046.d492a",
+          "f1a34e76.c4ad"
+        ]
+      ]
+    },
+    {
+      "id": "3c6b4186.a190ae",
+      "type": "csv",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "sep": ",",
+      "hdrin": true,
+      "hdrout": "",
+      "multi": "one",
+      "ret": "\\n",
+      "temp": "",
+      "skip": "0",
+      "strings": true,
+      "x": 90,
+      "y": 149,
+      "wires": [
+        [
+          "ff453bed.4d65a8"
+        ]
+      ]
+    },
+    {
+      "id": "ff453bed.4d65a8",
+      "type": "function",
+      "z": "98515e1f.b5069",
+      "name": "REGISTROS LIDOS",
+      "func": "if(msg.payload.COUNTRY == \" \")\n{\n    var sql;\n    flow.set(\"cont\",flow.get(\"cont\") + 1);\n    node.status({text:flow.get(\"cont\") + \" Registro(s) lidos\"});\n    sql = \"INSERT INTO \\\"BLUADMIN\\\".\\\"COVID\\\" (\\\"DATE\\\",\\\"TYPE\\\",\\\"CASES\\\",\\\"DIFFERENCE\\\",\\\"COUNTRY\\\",\\\"PROVINCE_STATE\\\",\\\"LAT\\\",\\\"LONG\\\",\\\"LATEST_DATE\\\") \";\n    sql += \"VALUES('\" + msg.payload.DATE + \"','\" + msg.payload.TYPE + \"',\" + msg.payload.CASES + \",\" + msg.payload.DIFFERENCE + \",'\" + msg.payload.COUNTRY + \"','\" + msg.payload.PROVINCE_STATE + \"',\" + msg.payload.LAT + \",\" + msg.payload.LONG + \",'\" + msg.payload.LATEST_DATE + \"');\";\n    msg.payload = sql;\n    return msg;\n}\nelse\n{\n    return null;\n}\n",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 280,
+      "y": 149,
+      "wires": [
+        [
+          "de465a97.528528",
+          "f1a34e76.c4ad"
+        ]
+      ]
+    },
+    {
+      "id": "a4c64002.4dd05",
+      "type": "inject",
+      "z": "98515e1f.b5069",
+      "name": "QTOS REGISTROS?",
+      "topic": "",
+      "payload": "",
+      "payloadType": "date",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 170,
+      "y": 327,
+      "wires": [
+        [
+          "201cd9ee.8d5476"
+        ]
+      ]
+    },
+    {
+      "id": "201cd9ee.8d5476",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "select count(*) from BLUADMIN.COVID",
+      "params": "",
+      "name": "",
+      "x": 360,
+      "y": 327,
+      "wires": [
+        [
+          "233a9d0d.665a82"
+        ]
+      ]
+    },
+    {
+      "id": "de465a97.528528",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "",
+      "params": "",
+      "name": "",
+      "x": 500,
+      "y": 149,
+      "wires": [
+        [
+          "55e5c037.6d3c9"
+        ]
+      ]
+    },
+    {
+      "id": "34b77046.d492a",
+      "type": "function",
+      "z": "98515e1f.b5069",
+      "name": "CRIA VARIÁVEIS",
+      "func": "flow.set(\"cont\",0);\nflow.set(\"processados\",0);\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 470,
+      "y": 89,
+      "wires": [
+        [
+          "3c6b4186.a190ae"
+        ]
+      ]
+    },
+    {
+      "id": "55e5c037.6d3c9",
+      "type": "function",
+      "z": "98515e1f.b5069",
+      "name": "REGISTROS PROCESSADOS",
+      "func": "if(msg.statusCode != 200)\n{\n    return msg;\n}    \nflow.set(\"processados\",flow.get(\"processados\") + 1);\nnode.status({text:flow.get(\"processados\") + \" Registros processados\"});\nreturn null;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 730,
+      "y": 149,
+      "wires": [
+        [
+          "f1a34e76.c4ad"
+        ]
+      ]
+    },
+    {
+      "id": "c00ba039.d6421",
+      "type": "inject",
+      "z": "98515e1f.b5069",
+      "name": "Teste de INSERT",
+      "topic": "",
+      "payload": "",
+      "payloadType": "date",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 180,
+      "y": 367,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "f61c5b52.2a53c8",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "INSERT INTO \"BLUADMIN\".\"COVID\" (\"DATE\",\"TYPE\",\"CASES\",\"DIFFERENCE\",\"COUNTRY\",\"PROVINCE_STATE\",\"LAT\",\"LONG\",\"LATEST_DATE\") VALUES('2020-03-23','Confirmed',1924,378,'Brazil','N/A',-14.235,POINT(-51.9253 -14.235),'2020-03-29');",
+      "params": "",
+      "name": "",
+      "x": 360,
+      "y": 367,
+      "wires": [
+        [
+          "233a9d0d.665a82"
+        ]
+      ]
+    },
+    {
+      "id": "792660ee.be619",
+      "type": "http in",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "url": "/wa-nlu-covid",
+      "method": "post",
+      "upload": false,
+      "swaggerDoc": "",
+      "x": 110,
+      "y": 40,
+      "wires": [
+        [
+          "69169edc.a16fc"
+        ]
+      ]
+    },
+    {
+      "id": "69169edc.a16fc",
+      "type": "change",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "rules": [
+        {
+          "t": "set",
+          "p": "payload",
+          "pt": "msg",
+          "to": "req.body.text",
+          "tot": "msg"
+        }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 300,
+      "y": 40,
+      "wires": [
+        [
+          "3adb3f8d.97da8"
+        ]
+      ]
+    },
+    {
+      "id": "3704f22b.61ddee",
+      "type": "http response",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "statusCode": "",
+      "headers": {},
+      "x": 710,
+      "y": 100,
+      "wires": []
+    },
+    {
+      "id": "bb2c84a7.93cc38",
+      "type": "function",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "func": "msg.payload=msg.features;\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 570,
+      "y": 100,
+      "wires": [
+        [
+          "3704f22b.61ddee"
+        ]
+      ]
+    },
+    {
+      "id": "5927f92d.c46f38",
+      "type": "debug",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 750,
+      "y": 320,
+      "wires": []
+    },
+    {
+      "id": "e403d898.c1c778",
+      "type": "function",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "Dados pra a pesquisa",
+      "func": "delete msg.tipo;\ndelete msg.local;\nif((msg.payload.output.intents.length > 0 && (msg.payload.output.intents[0].intent == \"Quantidade\" || msg.payload.output.intents[0].intent == \"Quando\")) || msg.payload.context.skills[\"main skill\"].user_defined.Quantidade)\n{\n    msg.intencao = (msg.payload.output.intents.length > 0 ? msg.payload.output.intents[0].intent : \"Quantidade\");\n    if(msg.payload.context.skills[\"main skill\"].user_defined.resultado && msg.payload.context.skills[\"main skill\"].user_defined.resultado.entities && msg.payload.context.skills[\"main skill\"].user_defined.resultado.entities.length > 0)\n    {\n        for(x=0;x<msg.payload.context.skills[\"main skill\"].user_defined.resultado.entities.length;x++)\n        {\n            if(msg.payload.context.skills[\"main skill\"].user_defined.resultado.entities[x].type == 'Location')\n            {\n                msg.local = msg.payload.context.skills[\"main skill\"].user_defined.resultado.entities[x].text.replace(\",\",\"\");\n                break;\n            }\n        }\n    }\n    if(msg.payload.output.entities && msg.payload.output.entities.length > 0)\n    {\n        for(x=0;x<msg.payload.output.entities.length;x++)\n        {\n            if(msg.payload.output.entities[x].entity == \"Tipo\")\n            {\n                msg.tipo = msg.payload.output.entities[x].value;\n                if(msg.payload.output.entities[x].value == \"Curadas\")\n                {\n                    msg.payload =\n                    [{\"text\":\"Os dados sobre os curados ou recuperados, são imprecisos na maior parte do mundo, por isso, não tenho estes dados.\"}];\n                    return [null,null,null,msg];\n                }\n                break;\n            }\n        }\n    }\n    if(msg.local && msg.tipo)\n        return [msg,null,null,null];\n    else if(msg.local)\n        return [msg,null,null,null];\n    else if(msg.tipo)\n        return [null, msg,null,null];\n    else\n        return [null,null,msg,null];\n}\nelse\n{\n    var respostas = [];\n    for(x=0;x<msg.payload.output.generic.length;x++)\n    {\n        if(msg.payload.output.generic[x].response_type == \"text\")\n        {\n            respostas[x] = {\"text\":msg.payload.output.generic[x].text};\n        }\n        if(msg.payload.output.generic[x].response_type == \"image\")\n        {\n            respostas[x] = \n                {\n                  \"attachment\": {\n                    \"type\": \"image\",\n                    \"payload\": {\n                      \"url\": \"https://rockets.chatfuel.com/assets/welcome.png\"\n                    }\n                  }\n                };\n        }\n    }\n    msg.payload = respostas;\n    return [null,null,null,msg];\n}\n",
+      "outputs": 4,
+      "noerr": 0,
+      "x": 240,
+      "y": 420,
+      "wires": [
+        [
+          "c4f3b4bd.4687d8"
+        ],
+        [
+          "ed8d0b03.9eeaf8"
+        ],
+        [
+          "7ef8c125.4beec"
+        ],
+        [
+          "efb80b59.baf348",
+          "cc58c6ca.63f4c8"
+        ]
+      ]
+    },
+    {
+      "id": "c4f3b4bd.4687d8",
+      "type": "link out",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "qtde_loc_tipo_out",
+      "links": [
+        "b89c3c1f.1dbd8"
+      ],
+      "x": 436,
+      "y": 374,
+      "wires": []
+    },
+    {
+      "id": "b89c3c1f.1dbd8",
+      "type": "link in",
+      "z": "98515e1f.b5069",
+      "name": "qtde_loc_tipo_in",
+      "links": [
+        "c4f3b4bd.4687d8",
+        "b5ac4e09.7a965"
+      ],
+      "x": 135,
+      "y": 482,
+      "wires": [
+        [
+          "6dab29d1.cb3ec8"
+        ]
+      ]
+    },
+    {
+      "id": "81fe242b.d129a8",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "select SUM(CASES) as CASES  from BLUADMIN.COVID \nwhere UPPER(COUNTRY) = UPPER(?) and TYPE = ?",
+      "params": "msg.localEN,msg.tipoEN",
+      "name": "SELECT por País e Tipo",
+      "x": 521,
+      "y": 602,
+      "wires": [
+        [
+          "76481976.f29ee8",
+          "6fda7fca.3863c"
+        ]
+      ]
+    },
+    {
+      "id": "76481976.f29ee8",
+      "type": "link out",
+      "z": "98515e1f.b5069",
+      "name": "resp_qtde_loc_tipo_out",
+      "links": [
+        "3dd940e6.cf86b",
+        "f9290fc0.ec0ea"
+      ],
+      "x": 1035,
+      "y": 660,
+      "wires": []
+    },
+    {
+      "id": "f9290fc0.ec0ea",
+      "type": "link in",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "resp_qtde_loc_tipo_in",
+      "links": [
+        "76481976.f29ee8",
+        "a8af0661.d2fe98",
+        "7226e5b6.2e504c"
+      ],
+      "x": 195,
+      "y": 500,
+      "wires": [
+        [
+          "f2727033.ddae7",
+          "cc58c6ca.63f4c8"
+        ]
+      ]
+    },
+    {
+      "id": "f2727033.ddae7",
+      "type": "function",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "func": "function formatCurrency(amount, decimalCount = 2, decimal = \".\", thousands = \",\") {\n  try {\n    decimalCount = Math.abs(decimalCount);\n    decimalCount = isNaN(decimalCount) ? 2 : decimalCount;\n\n    const negativeSign = amount < 0 ? \"-\" : \"\";\n\n    let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();\n    let j = (i.length > 3) ? i.length % 3 : 0;\n\n    return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\\d{3})(?=\\d)/g, \"$1\" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : \"\");\n  } catch (e) {\n    console.log(e)\n  }\n}\n\nif (msg.payload.CASES || msg.payload.length > 0)\n{\n    if(msg.local && msg.tipo)\n    {\n        if(msg.payload.CASES && parseInt(msg.payload.CASES) > 0)\n        {\n            if(msg.estado && msg.cidade)\n                msg.payload =\n                [{\"text\":msg.nome + \", atualmente existem \"+formatCurrency(msg.payload.CASES,0,\",\",\".\")+\" casos de \" + msg.tipo + \" em \" + msg.cidade + \",\"+ msg.estadolong + \" - \" +  msg.local}];\n            else if(msg.estado)\n                msg.payload =\n                [{\"text\":msg.nome + \", atualmente existem \"+formatCurrency(msg.payload.CASES,0,\",\",\".\")+\" casos de \" + msg.tipo + \" em \" + msg.estadolong + \" - \" +  msg.local}];\n            else\n                msg.payload =\n                [{\"text\":msg.nome + \", atualmente existem \"+formatCurrency(msg.payload.CASES,0,\",\",\".\")+\" casos de \" + msg.tipo + \" em \" + msg.local}];\n        }\n        else\n        {\n            if(msg.estado && msg.cidade)\n                msg.payload =\n                [{\"text\":msg.nome + \", a excelente notícia é que não existem casos de \" + msg.tipo + \" em \" + msg.cidade + \",\" + msg.estadolong + \" - \" + msg.local + \" até o momento!\"}];\n            else if(msg.estado)\n                msg.payload =\n                [{\"text\":msg.nome + \", a excelente notícia é que não existem casos de \" + msg.tipo + \" em \" + msg.estadolong + \" - \" + msg.local + \" até o momento!\"}];\n            else\n                msg.payload =\n                [{\"text\":msg.nome + \", a excelente notícia é que não existem casos de \" + msg.tipo + \" em \" + msg.local + \" até o momento!\"}];\n        }\n    }\n    else if(msg.local)\n    {\n        if(msg.payload.length > 0)\n        {\n            if(msg.estado && msg.cidade)\n                m = \"Até a ultima atualização, a situação é a seguinte em \" + msg.cidade + \",\" + msg.estadolong + \" - \" + msg.local + \":\\n\";\n            else if(msg.estado)\n                m = \"Até a ultima atualização, a situação é a seguinte em \" + msg.estadolong + \" - \" + msg.local + \":\\n\";\n            else\n                m = \"Até a ultima atualização, a situação é a seguinte em \" + msg.local + \":\\n\";\n            m += \"Infectados: \" + formatCurrency(msg.payload[0].CASES,0,\",\",\".\") + \"\\n\";\n            m += \"Mortos: \" + formatCurrency(msg.payload[1].CASES,0,\",\",\".\") + \"\\n\";                \n            msg.payload = \n            [{\"text\":m}];\n        }\n        else\n        {\n            if(msg.estado && msg.cidade)\n                msg.payload =\n                [{\"text\":msg.nome + \", a boa notícia é que não existem casos de \" + msg.tipo + \" em \" + msg.cidade + \",\" + msg.estadolong + \" - \" + msg.local + \" até o momento!\"}];\n            else if(msg.estado)\n                msg.payload =\n                [{\"text\":msg.nome + \", a boa notícia é que não existem casos de \" + msg.tipo + \" em \" + msg.estadolong + \" - \" + msg.local + \" até o momento!\"}];\n            else\n                msg.payload =\n                [{\"text\":msg.nome + \", a boa notícia é que não existem casos de \" + msg.tipo + \" em \" + msg.local + \" até o momento!\"}];\n        }\n    }\n    else if(msg.tipo)\n    {\n        msg.payload =\n        [{\"text\":msg.nome + \", até o momento são \"+formatCurrency(msg.payload.CASES,0,\",\",\".\")+\" casos de \"+msg.tipo + \" no mundo.\"}];\n    }\n    else\n    {\n        if(msg.payload.length > 0)\n        {\n            m = \"Até a ultima atualização, a situação é a seguinte no mundo:\\n\";\n            m += \"Infectados: \" + formatCurrency(msg.payload[0].CASES,0,\",\",\".\") + \"\\n\";\n            m += \"Mortos: \" + formatCurrency(msg.payload[1].CASES,0,\",\",\".\") + \"\\n\";                \n            msg.payload = \n            [{\"text\":m}];\n        }\n        else\n        {\n            msg.payload =\n            [{\"text\":msg.nome + \", não consegui trazer estes dados no momento\"}];\n        }\n    }\n}\nelse \n    if(msg.estado && msg.cidade)\n        msg.payload =\n        [{\"text\":msg.nome + \", não encontrei informações em meus registros, pode ser que não exista casos em \" + msg.cidade + \", \" + msg.estado + \", \" + msg.local}];\n    else if(msg.estado)\n        msg.payload =\n        [{\"text\":msg.nome + \", não encontrei informações em meus registros, pode ser que não exista casos em \" + msg.estado + \", \" + msg.local}];\n    else \n        msg.payload =\n        [{\"text\":msg.nome + \", não encontrei informações em meus registros, pode ser que não exista casos em \" + msg.local}];\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 355,
+      "y": 500,
+      "wires": [
+        [
+          "efb80b59.baf348",
+          "cc58c6ca.63f4c8"
+        ]
+      ]
+    },
+    {
+      "id": "6c1dffa9.f3478",
+      "type": "http in",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "url": "/chat",
+      "method": "get",
+      "upload": false,
+      "swaggerDoc": "",
+      "x": 80,
+      "y": 320,
+      "wires": [
+        [
+          "4e098682.034f38"
+        ]
+      ]
+    },
+    {
+      "id": "4e098682.034f38",
+      "type": "change",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "rules": [
+        {
+          "t": "set",
+          "p": "mensagem",
+          "pt": "msg",
+          "to": "req.query.mensagem",
+          "tot": "msg"
+        },
+        {
+          "t": "set",
+          "p": "nome",
+          "pt": "msg",
+          "to": "req.query.nome",
+          "tot": "msg"
+        },
+        {
+          "t": "set",
+          "p": "sobrenome",
+          "pt": "msg",
+          "to": "req.query.sobrenome",
+          "tot": "msg"
+        },
+        {
+          "t": "set",
+          "p": "timezone",
+          "pt": "msg",
+          "to": "req.query.local",
+          "tot": "msg"
+        },
+        {
+          "t": "set",
+          "p": "payload",
+          "pt": "msg",
+          "to": "req.query.mensagem",
+          "tot": "msg"
+        }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 260,
+      "y": 320,
+      "wires": [
+        [
+          "a9e807f4.3a9448"
+        ]
+      ]
+    },
+    {
+      "id": "efb80b59.baf348",
+      "type": "http response",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "statusCode": "",
+      "headers": {},
+      "x": 671,
+      "y": 500,
+      "wires": []
+    },
+    {
+      "id": "f1a34e76.c4ad",
+      "type": "debug",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "false",
+      "x": 795,
+      "y": 62,
+      "wires": []
+    },
+    {
+      "id": "a5ffd600.ff5538",
+      "type": "comment",
+      "z": "98515e1f.b5069",
+      "name": "Caraga dos dados (NÃO USAR)",
+      "info": "",
+      "x": 150,
+      "y": 20,
+      "wires": []
+    },
+    {
+      "id": "2914fe49.2ea042",
+      "type": "comment",
+      "z": "98515e1f.b5069",
+      "name": "Para efeito de debug e testes",
+      "info": "",
+      "x": 140,
+      "y": 205,
+      "wires": []
+    },
+    {
+      "id": "13dc6a70.c9e506",
+      "type": "comment",
+      "z": "98515e1f.b5069",
+      "name": "Pesquisa dos registros no DB2",
+      "info": "",
+      "x": 153,
+      "y": 435,
+      "wires": []
+    },
+    {
+      "id": "fafdeb9a.1c4428",
+      "type": "comment",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "API de integração ao Facebook via ChatFuel (Página Botcareyou)",
+      "info": "",
+      "x": 250,
+      "y": 278,
+      "wires": []
+    },
+    {
+      "id": "a45471a7.3c187",
+      "type": "catch",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "Pega erro",
+      "scope": [
+        "e403d898.c1c778"
+      ],
+      "uncaught": false,
+      "x": 180,
+      "y": 558,
+      "wires": [
+        [
+          "e310c433.ce1878",
+          "5bf42576.28260c"
+        ]
+      ]
+    },
+    {
+      "id": "e310c433.ce1878",
+      "type": "function",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "func": "msg.payload =\n[{\"text\":\"Ops! Desculpe-me, mas não tenho certeza se entendi ou não tenho resposta para isso\"}];\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 330,
+      "y": 558,
+      "wires": [
+        [
+          "efb80b59.baf348"
+        ]
+      ]
+    },
+    {
+      "id": "ef955245.0c911",
+      "type": "natural-language-understanding-model-manager-v1",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "nlu-service-endpoint": "",
+      "nlu-model-mode": "listModels",
+      "x": 490,
+      "y": 198,
+      "wires": [
+        [
+          "b113d1a5.63ad"
+        ]
+      ]
+    },
+    {
+      "id": "b113d1a5.63ad",
+      "type": "debug",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "false",
+      "x": 770,
+      "y": 198,
+      "wires": []
+    },
+    {
+      "id": "8e1072be.1c6a5",
+      "type": "inject",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "topic": "",
+      "payload": "",
+      "payloadType": "date",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 100,
+      "y": 198,
+      "wires": [
+        [
+          "ad301558.b96218"
+        ]
+      ]
+    },
+    {
+      "id": "ad301558.b96218",
+      "type": "function",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "func": "msg.payload = \"bd256991-7f63-44f1-acee-692cdfbf6c43\";\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 230,
+      "y": 198,
+      "wires": [
+        [
+          "ef955245.0c911"
+        ]
+      ]
+    },
+    {
+      "id": "43f9c145.f633b",
+      "type": "watson-translator",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "action": "translate",
+      "basemodel": "ar-en",
+      "domain": "general",
+      "srclang": "pt",
+      "destlang": "en",
+      "password": "",
+      "apikey": "UhhBcEePChgg3On5k-ligixhCjU5XbLBzr7ZnLE9cqBg",
+      "custom": "",
+      "domainhidden": "general",
+      "srclanghidden": "pt",
+      "destlanghidden": "en",
+      "basemodelhidden": "ar-en",
+      "customhidden": "",
+      "filetype": "forcedglossary",
+      "trainid": "",
+      "lgparams2": true,
+      "service-endpoint": "",
+      "x": 590,
+      "y": 540,
+      "wires": [
+        [
+          "6d163ef1.217ed",
+          "6b47c693.cfbf98"
+        ]
+      ]
+    },
+    {
+      "id": "90d6b3.5973c95",
+      "type": "function",
+      "z": "98515e1f.b5069",
+      "name": "Port -> Ing",
+      "func": "/*\nfunction titleCase(str) {\n   var splitStr = str.toLowerCase().split(' ');\n   for (var i = 0; i < splitStr.length; i++) {\n       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     \n   }\n   return splitStr.join(' '); \n}\n\nmsg.payload = titleCase(msg.local);\n*/\n//if(msg.pais)\n    msg.payload = msg.pais;\n\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 395,
+      "y": 541,
+      "wires": [
+        [
+          "43f9c145.f633b"
+        ]
+      ]
+    },
+    {
+      "id": "6d163ef1.217ed",
+      "type": "function",
+      "z": "98515e1f.b5069",
+      "name": "De para de Paise",
+      "func": "delete msg.localEN;\ndelete msg.tipoEN;\nvar dados = {\"paises\":[\n    {\"id\":0,\"nome\":\"Antigua and Barbuda\"},\n    {\"id\":1,\"nome\":\"Bosnia and Herzegovina\"},\n    {\"id\":2,\"nome\":\"Central African Republic\"},\n    {\"id\":3,\"nome\":\"Congo (Brazzaville)\"},\n    {\"id\":4,\"nome\":\"Congo (Kinshasa)\"},\n    {\"id\":5,\"nome\":\"Cote d'Ivoire\"},\n    {\"id\":6,\"nome\":\"Equatorial Guinea\"},\n    {\"id\":7,\"nome\":\"Korea, South\"},\n    {\"id\":8,\"nome\":\"North Macedonia\"},\n    {\"id\":9,\"nome\":\"Papua New Guinea\"},\n    {\"id\":10,\"nome\":\"Saint Kitts and Nevis\"},\n    {\"id\":11,\"nome\":\"Saint Vincent and the Grenadines\"},\n    {\"id\":12,\"nome\":\"Timor-Leste\"},\n    {\"id\":13,\"nome\":\"Trinidad and Tobago\"},\n    {\"id\":14,\"nome\":\"United Arab Emirates\"},\n    {\"id\":15,\"nome\":\"US\"},\n    {\"id\":16,\"nome\":\"United Kingdom\"}\n]};\n\nvar usuario = {\"paises\":[\n    {\"id\":0,\"nome\":[\"Antigua e Barbuda\",\"Antígua e Barbuda\"]},\n    {\"id\":1,\"nome\":[\"Bosnia\",\"Herzegovina\",\"Bósnia e Herzegovina\",\"Bosnia e Herzegovina\"]},\n    {\"id\":2,\"nome\":[\"República Centro-Africana\",\"República Centro-Africana\"]},\n    {\"id\":3,\"nome\":[\"Congo (Brazzaville)\",\"Congo Brazzaville\",\"Brazzaville\"]},\n    {\"id\":4,\"nome\":[\"Congo (Kinshasa)\",\"Congo Kinshasa\",\"Kinshasa\"]},\n    {\"id\":5,\"nome\":[\"Costa do Marfim\"]},\n    {\"id\":6,\"nome\":[\"Guiné Equatorial\"]},\n    {\"id\":7,\"nome\":[\"Coréia do Sul\",\"Coreia do Sul\"]},\n    {\"id\":8,\"nome\":[\"Macedônia do Norte\"]},\n    {\"id\":9,\"nome\":[\"Papua Nova Guiné\",\"Papua Nova Guine\",\"Nova Guiné\",\"Nova Guiné\"]},\n    {\"id\":10,\"nome\":[\"São Cristóvão e Nevis\"]},\n    {\"id\":11,\"nome\":[\"São Vicente e Granadinas\"]},\n    {\"id\":12,\"nome\":[\"Timor-Leste\",\"Timor Leste\"]},\n    {\"id\":13,\"nome\":[\"Trindade e Tobago\"]},\n    {\"id\":14,\"nome\":[\"Emirados Árabes Unidos\",\"Emirados Árabes\",\"Emirados Arabes\"]},\n    {\"id\":15,\"nome\":[\"EUA\",\"Estados Unidos da America\",\"Estados Unidos\",\"Eua\",\"United States\"]},\n    {\"id\":16,\"nome\":[\"Inglaterra\",\"Reino Unido\",\"UK\",\"Londres\"]}\n]};\n\nloop1:\nfor(a=0;a<usuario.paises.length;a++)\n{\n    loop2:\n    for(b=0;b<usuario.paises[a].nome.length;b++)\n    {\n        if(usuario.paises[a].nome[b] == msg.pais)\n        {\n            var local = dados.paises[a].nome;\n            break loop1;\n        }\n    }\n}\n\nif(!local)\n    msg.localEN = msg.payload;\nelse\n    msg.localEN = local;\n\nif(msg.tipo)\n{\n    if (msg.tipo == \"Mortes\")\n        msg.tipoEN = \"Deaths\";\n    if (msg.tipo == \"Infectados\")\n        msg.tipoEN = \"Confirmed\";\n    if(msg.estado)\n        return [null,null,msg,null];\n    return [msg,null,null,null];  // Selciona os dados por tipo e local\n}\nelse\n    if(msg.estado)\n        return [null,null,null,msg];  // Seleciona os dados somente por local\n    else\n        return [null,msg,null,null];  // Seleciona os dados somente por local\n    ",
+      "outputs": 4,
+      "noerr": 0,
+      "x": 230,
+      "y": 609,
+      "wires": [
+        [
+          "81fe242b.d129a8"
+        ],
+        [
+          "4b2b791a.7c2e58"
+        ],
+        [
+          "cddf9b06.df8538"
+        ],
+        [
+          "c4e5203b.0edce"
+        ]
+      ]
+    },
+    {
+      "id": "b30f4d44.2bb49",
+      "type": "comment",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "Processo para listar e deletar modelos do NLU",
+      "info": "",
+      "x": 200,
+      "y": 157,
+      "wires": []
+    },
+    {
+      "id": "948fa58b.ed8dd8",
+      "type": "http in",
+      "z": "f2c05422.6bb658",
+      "name": "",
+      "url": "/politicadeprivacidade",
+      "method": "get",
+      "upload": false,
+      "swaggerDoc": "",
+      "x": 150,
+      "y": 80,
+      "wires": [
+        [
+          "a7be53c5.cdee1"
+        ]
+      ]
+    },
+    {
+      "id": "a7be53c5.cdee1",
+      "type": "template",
+      "z": "f2c05422.6bb658",
+      "name": "",
+      "field": "payload",
+      "fieldType": "msg",
+      "format": "html",
+      "syntax": "mustache",
+      "template": "<h2>Política de privacidade para <a href='https://node-red-covid-19.mybluemix.net/'>BotCareYou</a></h2><p>Todas as suas informações pessoais recolhidas, serão usadas para o ajudar a tornar a sua visita no nosso site o mais produtiva e agradável possível.</p><p>A garantia da confidencialidade dos dados pessoais dos utilizadores do nosso site é importante para o BotCareYou.</p><p>Todas as informações pessoais relativas a membros, assinantes, clientes ou visitantes que usem o BotCareYou serão tratadas em concordância com a Lei da Proteção de Dados Pessoais de 26 de outubro de 1998 (Lei n.º 67/98).</p><p>A informação pessoal recolhida pode incluir o seu nome, e-mail, número de telefone e/ou telemóvel, morada, data de nascimento e/ou outros.</p><p>O uso do BotCareYou pressupõe a aceitação deste <a href='http://www.politicaprivacidade.com' title='acordo de privacidade'>Acordo de privacidade</a>. A equipa do BotCareYou reserva-se ao direito de alterar este acordo sem aviso prévio. Deste modo, recomendamos que consulte a nossa política de privacidade com regularidade de forma a estar sempre atualizado.</p><h2>Os anúncios</h2><p>Tal como outros websites, coletamos e utilizamos informação contida nos anúncios. A informação contida nos anúncios, inclui o seu endereço IP (Internet Protocol), o seu ISP (Internet Service Provider, como o Sapo, Clix, ou outro), o browser que utilizou ao visitar o nosso website (como o Internet Explorer ou o Firefox), o tempo da sua visita e que páginas visitou dentro do nosso website.</p><h2>Ligações a Sites de terceiros</h2><p>O BotCareYou possui ligações para outros sites, os quais, a nosso ver, podem conter informações / ferramentas úteis para os nossos visitantes. A nossa política de privacidade não é aplicada a sites de terceiros, pelo que, caso visite outro site a partir do nosso deverá ler a politica de privacidade do mesmo.</p><p>Não nos responsabilizamos pela política de privacidade ou conteúdo presente nesses mesmos sites.</p>",
+      "output": "str",
+      "x": 400,
+      "y": 80,
+      "wires": [
+        [
+          "e1f49f94.c67b9"
+        ]
+      ]
+    },
+    {
+      "id": "e1f49f94.c67b9",
+      "type": "http response",
+      "z": "f2c05422.6bb658",
+      "name": "",
+      "statusCode": "",
+      "headers": {},
+      "x": 610,
+      "y": 80,
+      "wires": []
+    },
+    {
+      "id": "2de43bee.749c54",
+      "type": "http in",
+      "z": "f2c05422.6bb658",
+      "name": "",
+      "url": "/BotCareYou",
+      "method": "get",
+      "upload": false,
+      "swaggerDoc": "",
+      "x": 130,
+      "y": 180,
+      "wires": [
+        [
+          "ee58b4f.df22f48"
+        ]
+      ]
+    },
+    {
+      "id": "ee58b4f.df22f48",
+      "type": "template",
+      "z": "f2c05422.6bb658",
+      "name": "",
+      "field": "payload",
+      "fieldType": "msg",
+      "format": "handlebars",
+      "syntax": "mustache",
+      "template": "<HTML><BODY>Em construção</BODY></HTML>",
+      "output": "str",
+      "x": 400,
+      "y": 180,
+      "wires": [
+        [
+          "98d1f2d8.62a2e"
+        ]
+      ]
+    },
+    {
+      "id": "98d1f2d8.62a2e",
+      "type": "http response",
+      "z": "f2c05422.6bb658",
+      "name": "",
+      "statusCode": "",
+      "headers": {},
+      "x": 610,
+      "y": 180,
+      "wires": []
+    },
+    {
+      "id": "ed8d0b03.9eeaf8",
+      "type": "link out",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "qtde_tipo_out",
+      "links": [
+        "e8c6ade3.05642"
+      ],
+      "x": 436,
+      "y": 407,
+      "wires": []
+    },
+    {
+      "id": "4b2b791a.7c2e58",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "select TYPE, SUM(CASES) as CASES  from BLUADMIN.COVID \nwhere UPPER(COUNTRY) = UPPER(?)\nGROUP BY TYPE\nORDER BY TYPE\n",
+      "params": "msg.localEN",
+      "name": "SELECT por LOCAL",
+      "x": 513,
+      "y": 638,
+      "wires": [
+        [
+          "76481976.f29ee8",
+          "817a86a6.8efc78"
+        ]
+      ]
+    },
+    {
+      "id": "e8c6ade3.05642",
+      "type": "link in",
+      "z": "98515e1f.b5069",
+      "name": "qtde_tipo_in",
+      "links": [
+        "ed8d0b03.9eeaf8"
+      ],
+      "x": 135,
+      "y": 780,
+      "wires": [
+        [
+          "2f43b379.e0b85c"
+        ]
+      ]
+    },
+    {
+      "id": "70d43144.e3fea",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "select SUM(CASES) as CASES  from BLUADMIN.COVID \nwhere TYPE = ?\n",
+      "params": "msg.tipoEN",
+      "name": "SELECT por Tipo",
+      "x": 572,
+      "y": 779,
+      "wires": [
+        [
+          "a8af0661.d2fe98",
+          "14c31972.40bff7"
+        ]
+      ]
+    },
+    {
+      "id": "a8af0661.d2fe98",
+      "type": "link out",
+      "z": "98515e1f.b5069",
+      "name": "resp_qtde_tipo_out",
+      "links": [
+        "f9290fc0.ec0ea"
+      ],
+      "x": 733,
+      "y": 779,
+      "wires": []
+    },
+    {
+      "id": "2f43b379.e0b85c",
+      "type": "function",
+      "z": "98515e1f.b5069",
+      "name": "De para de tipos",
+      "func": "delete msg.tipoEN;\nif (msg.tipo == \"Mortes\")\n    msg.tipoEN = \"Deaths\";\nif (msg.tipo == \"Infectados\")\n    msg.tipoEN = \"Confirmed\";\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 270,
+      "y": 780,
+      "wires": [
+        [
+          "70d43144.e3fea"
+        ]
+      ]
+    },
+    {
+      "id": "6fda7fca.3863c",
+      "type": "debug",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 805,
+      "y": 562,
+      "wires": []
+    },
+    {
+      "id": "817a86a6.8efc78",
+      "type": "debug",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 805,
+      "y": 602,
+      "wires": []
+    },
+    {
+      "id": "14c31972.40bff7",
+      "type": "debug",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 780,
+      "y": 899,
+      "wires": []
+    },
+    {
+      "id": "6b47c693.cfbf98",
+      "type": "debug",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 805,
+      "y": 522,
+      "wires": []
+    },
+    {
+      "id": "5bf42576.28260c",
+      "type": "debug",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 330,
+      "y": 600,
+      "wires": []
+    },
+    {
+      "id": "7ef8c125.4beec",
+      "type": "link out",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "qtde_out",
+      "links": [
+        "9fd05322.f3357"
+      ],
+      "x": 435,
+      "y": 440,
+      "wires": []
+    },
+    {
+      "id": "9fd05322.f3357",
+      "type": "link in",
+      "z": "98515e1f.b5069",
+      "name": "qtde_tin",
+      "links": [
+        "7ef8c125.4beec"
+      ],
+      "x": 135,
+      "y": 825,
+      "wires": [
+        [
+          "3726d97b.112cb6"
+        ]
+      ]
+    },
+    {
+      "id": "3726d97b.112cb6",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "select TYPE, SUM(CASES) as CASES  from BLUADMIN.COVID \nGROUP BY TYPE\nORDER BY TYPE",
+      "params": "",
+      "name": "SELECT no mundo",
+      "x": 572,
+      "y": 824,
+      "wires": [
+        [
+          "7226e5b6.2e504c"
+        ]
+      ]
+    },
+    {
+      "id": "7226e5b6.2e504c",
+      "type": "link out",
+      "z": "98515e1f.b5069",
+      "name": "resp_qtde_out",
+      "links": [
+        "f9290fc0.ec0ea"
+      ],
+      "x": 735,
+      "y": 824,
+      "wires": []
+    },
+    {
+      "id": "2e0a7c4a.a32924",
+      "type": "watson-assistant-v2",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "service-endpoint": "",
+      "assistant_id": "09c53291-22de-4cb2-9d69-f37a3a982ebc",
+      "debug": false,
+      "restart": false,
+      "return_context": true,
+      "alternate_intents": false,
+      "multisession": false,
+      "timeout": "",
+      "optout-learning": false,
+      "x": 585,
+      "y": 320,
+      "wires": [
+        [
+          "e403d898.c1c778",
+          "5927f92d.c46f38"
+        ]
+      ]
+    },
+    {
+      "id": "cc58c6ca.63f4c8",
+      "type": "debug",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 670,
+      "y": 580,
+      "wires": []
+    },
+    {
+      "id": "9de224e1.522648",
+      "type": "google geocoding",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "geocodeBy": "address",
+      "address": "",
+      "lat": "",
+      "lon": "",
+      "googleAPI": "4280616c.73b2c",
+      "bounds": "",
+      "language": "",
+      "region": "",
+      "components": "",
+      "x": 413,
+      "y": 482,
+      "wires": [
+        [
+          "492a6373.7d028c",
+          "6b47c693.cfbf98"
+        ]
+      ]
+    },
+    {
+      "id": "6dab29d1.cb3ec8",
+      "type": "function",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "func": "msg.location = {\"address\":msg.local};\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 236,
+      "y": 482,
+      "wires": [
+        [
+          "9de224e1.522648"
+        ]
+      ]
+    },
+    {
+      "id": "492a6373.7d028c",
+      "type": "function",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "func": "delete msg.cidade;\ndelete msg.estado;\ndelete msg.pais;\ndelete msg.cidade_estado;\ndelete msg.estadolong;\ndelete msg.paiscurto;\n\nfor(x=0;x<msg.data.results[0].address_components.length;x++)\n{\n    if(msg.data.results[0].address_components[x].types[0] == \"administrative_area_level_2\")\n        msg.cidade = msg.data.results[0].address_components[x].long_name;\n    if(msg.data.results[0].address_components[x].types[0] == \"administrative_area_level_1\")\n    {\n        msg.estadolong = msg.data.results[0].address_components[x].long_name;\n        msg.estado = msg.data.results[0].address_components[x].short_name;\n    }\n    if(msg.data.results[0].address_components[x].types[0] == \"country\")\n    {\n        msg.paiscurto = msg.data.results[0].address_components[x].short_name; \n        msg.pais = msg.data.results[0].address_components[x].long_name;\n    }\n    \n}\n\nif(msg.pais)\n    msg.local = msg.pais;\n    \nif(msg.estado && msg.cidade)\n    msg.cidade_estado = msg.cidade.trim() + \"/\" + msg.estado;\n\nif(msg.pais && msg.estado && msg.cidade && msg.pais == 'Brazil')\n    return [msg,null,null,null];\nelse if(msg.pais && msg.estado && msg.pais == 'Brazil')\n    return [null,msg,null,null];\nelse if(msg.pais && msg.pais == 'Brazil')\n    return [null,null,msg,null];\nelse\n    return [null,null,null,msg];\n\n",
+      "outputs": 4,
+      "noerr": 0,
+      "x": 730,
+      "y": 420,
+      "wires": [
+        [
+          "164aa0f.2be105f"
+        ],
+        [
+          "b90a3901.069098"
+        ],
+        [
+          "5a1981a3.9a60d"
+        ],
+        [
+          "90d6b3.5973c95"
+        ]
+      ]
+    },
+    {
+      "id": "de08cf65.03efe",
+      "type": "debug",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 1330,
+      "y": 440,
+      "wires": []
+    },
+    {
+      "id": "a9e807f4.3a9448",
+      "type": "function",
+      "z": "ec39e4cb.f2c8e8",
+      "name": "",
+      "func": "function titleCase(str) {\n   var splitStr = str.toLowerCase().split(' ');\n   for (var i = 0; i < splitStr.length; i++) {\n       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     \n   }\n   return splitStr.join(' '); \n}\n\nmsg.additional_context = {\"nome\":msg.nome,\"Quantidade\":null};\nmsg.payload = titleCase(msg.mensagem);\n\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 433,
+      "y": 320,
+      "wires": [
+        [
+          "2e0a7c4a.a32924"
+        ]
+      ]
+    },
+    {
+      "id": "164aa0f.2be105f",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "SELECT 'Infectados' as TYPE, CASES\n  FROM \"BLUADMIN\".\"COVID-BR\"\n  WHERE CITY = ?\nUNION\nSELECT 'Mortes' as TYPE, DEATHS as CASES\n  FROM \"BLUADMIN\".\"COVID-BR\"\n  WHERE CITY = ?\nORDER BY TYPE;",
+      "params": "msg.cidade_estado,msg.cidade_estado",
+      "name": "Total em uma cidade no Brasil",
+      "x": 990,
+      "y": 360,
+      "wires": [
+        [
+          "dce52453.f3b368"
+        ]
+      ]
+    },
+    {
+      "id": "b90a3901.069098",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "SELECT 'Infectados' as TYPE, SUM(CASES) as CASES\n  FROM \"BLUADMIN\".\"COVID-BR\"\n  WHERE PROVINCE_STATE = ?\nUNION\nSELECT 'Mortes' as TYPE, SUM(DEATHS) AS DEATHS\n  FROM \"BLUADMIN\".\"COVID-BR\"\n  WHERE PROVINCE_STATE = ?\nORDER BY TYPE;",
+      "params": "msg.estado,msg.estado",
+      "name": "Total de um estado no Brasil",
+      "x": 980,
+      "y": 394,
+      "wires": [
+        [
+          "dce52453.f3b368"
+        ]
+      ]
+    },
+    {
+      "id": "5a1981a3.9a60d",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "SELECT 'Infectados' as TYPE, SUM(CASES) as CASES\n  FROM \"BLUADMIN\".\"COVID-BR\"\nUNION\nSELECT 'Mortes' as TYPE, SUM(DEATHS) AS DEATHS\n  FROM \"BLUADMIN\".\"COVID-BR\"\nORDER BY TYPE;",
+      "params": "",
+      "name": "Totais no Brasil",
+      "x": 940,
+      "y": 429,
+      "wires": [
+        [
+          "dce52453.f3b368"
+        ]
+      ]
+    },
+    {
+      "id": "cddf9b06.df8538",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "SELECT SUM(CASES) as CASES\n  FROM \"BLUADMIN\".\"COVID\"\n  WHERE COUNTRY = ? AND PROVINCE_STATE = ? AND TYPE = ?;\n",
+      "params": "msg.localEN,msg.estadolong,msg.tipoEN",
+      "name": "SELECT por PAIS, ESTADO e TIPO",
+      "x": 553,
+      "y": 673,
+      "wires": [
+        [
+          "76481976.f29ee8"
+        ]
+      ]
+    },
+    {
+      "id": "dce52453.f3b368",
+      "type": "function",
+      "z": "98515e1f.b5069",
+      "name": "",
+      "func": "if(msg.tipo && msg.payload.length >0)\n{\n    for(x=0;x<msg.payload.length;x++)\n    {\n        if(msg.payload[x].TYPE == msg.tipo)\n        {\n            msg.payload = {\"CASES\":msg.payload[x].CASES};\n            break;\n        }\n    }\n}\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 970,
+      "y": 540,
+      "wires": [
+        [
+          "de08cf65.03efe",
+          "76481976.f29ee8"
+        ]
+      ]
+    },
+    {
+      "id": "c4e5203b.0edce",
+      "type": "dashDB in",
+      "z": "98515e1f.b5069",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "SELECT TYPE, SUM(CASES) as CASES\n  FROM \"BLUADMIN\".\"COVID\"\n  WHERE COUNTRY = ? AND PROVINCE_STATE = ?\nGROUP BY TYPE\nORDER BY TYPE;",
+      "params": "msg.localEN,msg.estadolong",
+      "name": "SELECT por PAIS e ESTADO",
+      "x": 535,
+      "y": 709,
+      "wires": [
+        [
+          "76481976.f29ee8"
+        ]
+      ]
+    },
+    {
+      "id": "70c50807.e189a8",
+      "type": "twitter in",
+      "z": "b3e1fd0f.c086d",
+      "twitter": "8fb1342e.e503e8",
+      "tags": "#botcareyou",
+      "user": "false",
+      "name": "",
+      "inputs": 0,
+      "x": 126,
+      "y": 160,
+      "wires": [
+        [
+          "d8533c6b.e889d",
+          "d92a4f75.2f673"
+        ]
+      ]
+    },
+    {
+      "id": "d8533c6b.e889d",
+      "type": "debug",
+      "z": "b3e1fd0f.c086d",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 691,
+      "y": 240,
+      "wires": []
+    },
+    {
+      "id": "d92a4f75.2f673",
+      "type": "change",
+      "z": "b3e1fd0f.c086d",
+      "name": "",
+      "rules": [
+        {
+          "t": "change",
+          "p": "payload",
+          "pt": "msg",
+          "from": "#botcareyou",
+          "fromt": "str",
+          "to": "",
+          "tot": "str"
+        },
+        {
+          "t": "set",
+          "p": "local",
+          "pt": "msg",
+          "to": "payload",
+          "tot": "msg"
+        },
+        {
+          "t": "set",
+          "p": "nome",
+          "pt": "msg",
+          "to": "tweet.user.name",
+          "tot": "msg"
+        }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 340,
+      "y": 160,
+      "wires": [
+        [
+          "d8533c6b.e889d",
+          "39364f4.f5c6cb"
+        ]
+      ]
+    },
+    {
+      "id": "c492ae63.a1fb7",
+      "type": "twitter out",
+      "z": "b3e1fd0f.c086d",
+      "twitter": "8fb1342e.e503e8",
+      "name": "Tweet",
+      "x": 690,
+      "y": 320,
+      "wires": []
+    },
+    {
+      "id": "e1ce9c12.cd668",
+      "type": "function",
+      "z": "b3e1fd0f.c086d",
+      "name": "",
+      "func": "msg.payload = \"D \" + msg.tweet.user.screen_name + \" \" + msg.payload[0].text;\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 531,
+      "y": 320,
+      "wires": [
+        [
+          "d8533c6b.e889d",
+          "c492ae63.a1fb7"
+        ]
+      ]
+    },
+    {
+      "id": "39364f4.f5c6cb",
+      "type": "function",
+      "z": "b3e1fd0f.c086d",
+      "name": "",
+      "func": "function titleCase(str) {\n   var splitStr = str.toLowerCase().split(' ');\n   for (var i = 0; i < splitStr.length; i++) {\n       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     \n   }\n   return splitStr.join(' '); \n}\n\nmsg.local = titleCase(msg.local);\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 550,
+      "y": 160,
+      "wires": [
+        [
+          "b5ac4e09.7a965"
+        ]
+      ]
+    },
+    {
+      "id": "b5ac4e09.7a965",
+      "type": "link out",
+      "z": "b3e1fd0f.c086d",
+      "name": "tweet_loc_out",
+      "links": [
+        "b89c3c1f.1dbd8"
+      ],
+      "x": 723,
+      "y": 160,
+      "wires": []
+    },
+    {
+      "id": "3dd940e6.cf86b",
+      "type": "link in",
+      "z": "b3e1fd0f.c086d",
+      "name": "tweet_resp_loc_in",
+      "links": [
+        "76481976.f29ee8"
+      ],
+      "x": 196,
+      "y": 320,
+      "wires": [
+        [
+          "393b60aa.e7913"
+        ]
+      ]
+    },
+    {
+      "id": "393b60aa.e7913",
+      "type": "function",
+      "z": "b3e1fd0f.c086d",
+      "name": "",
+      "func": "function formatCurrency(amount, decimalCount = 2, decimal = \".\", thousands = \",\") {\n  try {\n    decimalCount = Math.abs(decimalCount);\n    decimalCount = isNaN(decimalCount) ? 2 : decimalCount;\n\n    const negativeSign = amount < 0 ? \"-\" : \"\";\n\n    let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();\n    let j = (i.length > 3) ? i.length % 3 : 0;\n\n    return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\\d{3})(?=\\d)/g, \"$1\" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : \"\");\n  } catch (e) {\n    console.log(e)\n  }\n}\n\nif (msg.payload.length > 0)\n{\n    if(msg.local)\n    {\n        if(msg.estado && msg.cidade)\n            m = \"Até a ultima atualização, a situação é a seguinte em \" + msg.cidade + \",\" + msg.estadolong + \" - \" + msg.local + \": \";\n        else if(msg.estado)\n            m = \"Até a ultima atualização, a situação é a seguinte em \" + msg.estadolong + \" - \" + msg.local + \": \";\n        else\n            m = \"Até a ultima atualização, a situação é a seguinte em \" + msg.local + \": \";\n        m += \"Infectados = \" + formatCurrency(msg.payload[0].CASES,0,\",\",\".\") + \", \";\n        m += \"Mortos = \" + formatCurrency(msg.payload[1].CASES,0,\",\",\".\");                \n        msg.payload =  \n        [{\"text\":m}];\n    }\n    else\n    {\n        m = \"Até a ultima atualização, a situação é a seguinte no mundo: \";\n        m += \"Infectados = \" + formatCurrency(msg.payload[0].CASES,0,\",\",\".\") + \", \";\n        m += \"Mortos = \" + formatCurrency(msg.payload[1].CASES,0,\",\",\".\") ;                \n        msg.payload = \n        [{\"text\":m}];\n    }\n}\nelse \n    if(msg.estado && msg.cidade)\n        msg.payload =\n        [{\"text\":msg.nome + \", não encontrei informações em meus registros, pode ser que não exista casos em \" + msg.cidade + \", \" + msg.estado + \", \" + msg.local}];\n    else if(msg.estado)\n        msg.payload =\n        [{\"text\":msg.nome + \", não encontrei informações em meus registros, pode ser que não exista casos em \" + msg.estado + \", \" + msg.local}];\n    else \n        msg.payload =\n        [{\"text\":msg.nome + \", não encontrei informações em meus registros, pode ser que não exista casos em \" + msg.local}];\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 331,
+      "y": 320,
+      "wires": [
+        [
+          "e1ce9c12.cd668"
+        ]
+      ]
+    },
+    {
+      "id": "d5ac8645.d33f48",
+      "type": "dashDB in",
+      "z": "d1b654df.803cd8",
+      "dashDB": "dcaca7a7.ff54c8",
+      "service": "_ext_",
+      "query": "SELECT \"CITY\",\"DEATHS_PER_100K_INHABITANTS\",\"TOTALCASES_PER_100K_INHABITANTS\"\n  FROM \"BLUADMIN\".\"COVID-BR\"\n  ORDER BY \"DEATHS_PER_100K_INHABITANTS\" DESC \n  LIMIT 40;",
+      "params": "",
+      "name": "",
+      "x": 160,
+      "y": 140,
+      "wires": [
+        [
+          "fd8a820b.e9b19",
+          "2be241b7.9063ee"
+        ]
+      ]
+    },
+    {
+      "id": "a5b1b967.9f6a28",
+      "type": "ui_chart",
+      "z": "d1b654df.803cd8",
+      "name": "",
+      "group": "39c7eed4.a092e2",
+      "order": 0,
+      "width": "6",
+      "height": "17",
+      "label": "Mortes por 100 mil habitantes",
+      "chartType": "horizontalBar",
+      "legend": "true",
+      "xformat": "HH:mm:ss",
+      "interpolate": "linear",
+      "nodata": "",
+      "dot": false,
+      "ymin": "0",
+      "ymax": "100",
+      "removeOlder": 1,
+      "removeOlderPoints": "",
+      "removeOlderUnit": "3600",
+      "cutout": 0,
+      "useOneColor": false,
+      "useUTC": false,
+      "colors": [
+        "#1f77b4",
+        "#aec7e8",
+        "#ff7f0e",
+        "#2ca02c",
+        "#98df8a",
+        "#d62728",
+        "#ff9896",
+        "#9467bd",
+        "#c5b0d5"
+      ],
+      "useOldStyle": false,
+      "outputs": 1,
+      "x": 670,
+      "y": 300,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "2456f7ea.d43d88",
+      "type": "inject",
+      "z": "d1b654df.803cd8",
+      "name": "",
+      "topic": "",
+      "payload": "",
+      "payloadType": "date",
+      "repeat": "1800",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 90,
+      "y": 60,
+      "wires": [
+        [
+          "d5ac8645.d33f48"
+        ]
+      ]
+    },
+    {
+      "id": "fd8a820b.e9b19",
+      "type": "debug",
+      "z": "d1b654df.803cd8",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 480,
+      "y": 80,
+      "wires": []
+    },
+    {
+      "id": "2be241b7.9063ee",
+      "type": "function",
+      "z": "d1b654df.803cd8",
+      "name": "",
+      "func": "cidades = [];\ninfectados = [];\nmortes = [];\nfor(i=0;i<msg.payload.length;i++)\n{\n    cidades[i] = msg.payload[i].CITY;\n    infectados[i] = msg.payload[i].TOTALCASES_PER_100K_INHABITANTS;\n    mortes[i] = msg.payload[i].DEATHS_PER_100K_INHABITANTS; \n}\nmsg.payload =[{\n    \"series\": [\"Mortes\", \"Infectados\"],\n    \"data\": [mortes, infectados],\n    \"labels\": cidades\n}];\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 320,
+      "y": 300,
+      "wires": [
+        [
+          "a5b1b967.9f6a28"
+        ]
+      ]
+    },
+    {
+      "id": "8cb667f4.f02cb8",
+      "type": "websocket out",
+      "z": "8530800f.d1c77",
+      "name": "",
+      "server": "a822f5c4.c2ac88",
+      "client": "",
+      "x": 750,
+      "y": 140,
+      "wires": []
+    },
+    {
+      "id": "73774cb0.542294",
+      "type": "http response",
+      "z": "8530800f.d1c77",
+      "name": "",
+      "x": 581,
+      "y": 80,
+      "wires": []
+    },
+    {
+      "id": "2c2069a8.965996",
+      "type": "http in",
+      "z": "8530800f.d1c77",
+      "name": "",
+      "url": "/teste",
+      "method": "get",
+      "upload": false,
+      "swaggerDoc": "",
+      "x": 202,
+      "y": 80,
+      "wires": [
+        [
+          "7b239c49.6e0a24"
+        ]
+      ]
+    },
+    {
+      "id": "7b239c49.6e0a24",
+      "type": "template",
+      "z": "8530800f.d1c77",
+      "name": "Simple Web Page",
+      "field": "payload",
+      "fieldType": "msg",
+      "format": "html",
+      "syntax": "mustache",
+      "template": "<!DOCTYPE HTML>\n<html>\n    <head>\n    <title>Simple Live Display</title>\n    <script type=\"text/javascript\">\n        var ws;\n        var wsUri = \"ws:\";\n        var loc = window.location;\n        console.log(loc);\n        if (loc.protocol === \"https:\") { wsUri = \"wss:\"; }\n        // This needs to point to the web socket in the Node-RED flow\n        // ... in this case it's ws/simple\n        wsUri += \"//\" + loc.host + loc.pathname.replace(\"teste\",\"ws/maratona\");\n\n        function wsConnect() {\n            console.log(\"Conectar\",wsUri);\n            ws = new WebSocket(wsUri);\n            //var line = \"\";    // either uncomment this for a building list of messages\n            ws.onmessage = function(msg) {\n                var line = document.getElementById('messages').innerHTML + \"<br>\";  // or uncomment this to overwrite the existing message\n                // parse the incoming message as a JSON object\n                var data = msg.data;\n                //console.log(data);\n                // build the output from the topic and payload parts of the object\n                line += \"<p>\"+data+\"</p>\";\n                // replace the messages div with the new \"line\"\n                document.getElementById('messages').innerHTML = line;\n                //ws.send(JSON.stringify({data:data}));\n            }\n            ws.onopen = function() {\n                // update the status div with the connection status\n                document.getElementById('status').innerHTML = \"Conectado\";\n                //ws.send(\"Open for data\");\n                console.log(\"Conectado\");\n            }\n            ws.onclose = function() {\n                // update the status div with the connection status\n                document.getElementById('status').innerHTML = \"Desconectado\";\n                // in case of lost connection tries to reconnect every 3 secs\n                setTimeout(wsConnect,3000);\n            }\n        }\n        \n        function doit(m) {\n            if (ws) { ws.send(m); }\n        }\n    </script>\n    </head>\n    <body onload=\"wsConnect();\" onunload=\"ws.disconnect();\">\n        <font face=\"Arial\">\n        <h1>Teste dos dos serviços da Maratona</h1>\n        <div id=\"messages\"></div>\n        <button type=\"button\" onclick='doit(\"executar\");'>Executar os testes</button>\n        <hr/>\n        <div id=\"status\">Aguardando</div>\n        </font>\n    </body>\n</html>\n",
+      "x": 409,
+      "y": 80,
+      "wires": [
+        [
+          "73774cb0.542294"
+        ]
+      ]
+    },
+    {
+      "id": "5a2d9a1b.025b34",
+      "type": "websocket in",
+      "z": "8530800f.d1c77",
+      "name": "",
+      "server": "a822f5c4.c2ac88",
+      "client": "",
+      "x": 107,
+      "y": 140,
+      "wires": [
+        [
+          "379b595f.1e7676"
+        ]
+      ]
+    },
+    {
+      "id": "c29d87c7.648478",
+      "type": "debug",
+      "z": "8530800f.d1c77",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 610,
+      "y": 281,
+      "wires": []
+    },
+    {
+      "id": "379b595f.1e7676",
+      "type": "function",
+      "z": "8530800f.d1c77",
+      "name": "",
+      "func": "nome = \"CREATE TABLE gama (id serial PRIMARY KEY)\"\n\nmsg.payload = {\n    \"referral\": \"2d1163c5-0006-4cf2-9597-79caf6c92eb7\",\n    \"fullname\": nome,\n    \"email\": \"xxgamaxxvanderlei@ibm.com\",\n    \"country\": \"BRA\",\n    \"national_id\": \"89217982\",\n    \"birthday\": \"03/10/1988\",\n    \"language\": \"es\"\n};\nmsg.headers= {'Content-Type':'application/json'};\nemail = \"vanderlei@ibm.com\";\nfor(i=0;i<1;i++)\n{\n    msg.payload.email = \"A\"+i+email;\n    node.status(\"Teste: \" + i);\n    msg.url = \"https://testproxy.btcsupervisor.biz/register\";\n    node.send(msg);\n}\nnode.status(\"teste cloncluído com sucesso\");\n\n\n\n/*\nnode.status(\"\");\nmensagens = [];\nmensagens[0] = \"e no Brasil, qual a situação atual\"; //Brasil\nmensagens[1] = \"quantos casos em pequin\";            //Pequim\nmensagens[2] = \"como estão as coisas em são paulo\";  //São Paulo\nmensagens[3] = \"qual a situação agora?\";             //Mundo\nmensagens[4] = \"quantas mortes no canada\";           //Canada\nmensagens[5] = \"Número de doentes\";                  //Mundo\n\nfor(x=0;x<mensagens.length;x++)\n{\n    msg.url = \"https://node-red-covid-19.mybluemix.net/chat?mensagem=\"+mensagens[x]+\"&nome=Sergio&sobrenome=Gama&local=SP\" \n    node.send(msg);\n}\nnode.status(\"teste cloncluído com sucesso\");\nreturn null;\n*/",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 271,
+      "y": 140,
+      "wires": [
+        [
+          "64649323.6009cc",
+          "c29d87c7.648478"
+        ]
+      ]
+    },
+    {
+      "id": "64649323.6009cc",
+      "type": "http request",
+      "z": "8530800f.d1c77",
+      "name": "",
+      "method": "POST",
+      "ret": "txt",
+      "paytoqs": false,
+      "url": "",
+      "tls": "",
+      "persist": false,
+      "proxy": "",
+      "authType": "",
+      "x": 430,
+      "y": 140,
+      "wires": [
+        [
+          "8cb667f4.f02cb8",
+          "c29d87c7.648478"
+        ]
+      ]
+    },
+    {
+      "id": "5bce6238.41b40c",
+      "type": "inject",
+      "z": "d831d1a4.8d523",
+      "name": "",
+      "topic": "",
+      "payload": "SI",
+      "payloadType": "str",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 150,
+      "y": 200,
+      "wires": [
+        [
+          "b4df25a4.93e5e8"
+        ]
+      ]
+    },
+    {
+      "id": "b4df25a4.93e5e8",
+      "type": "watson-assistant-v2",
+      "z": "d831d1a4.8d523",
+      "name": "",
+      "service-endpoint": "https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/0741c9a9-27ad-4f9b-967f-9799aefecb34",
+      "assistant_id": "d16d6cbe-4d0d-4c31-939c-0c52eaf41059",
+      "debug": false,
+      "restart": false,
+      "return_context": true,
+      "alternate_intents": false,
+      "multisession": false,
+      "timeout": "",
+      "optout-learning": false,
+      "x": 340,
+      "y": 280,
+      "wires": [
+        [
+          "4267d1fe.ef368"
+        ]
+      ]
+    },
+    {
+      "id": "4267d1fe.ef368",
+      "type": "function",
+      "z": "d831d1a4.8d523",
+      "name": "",
+      "func": "\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 520,
+      "y": 220,
+      "wires": [
+        [
+          "34f2c0ff.35afb"
+        ]
+      ]
+    },
+    {
+      "id": "34f2c0ff.35afb",
+      "type": "debug",
+      "z": "d831d1a4.8d523",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "false",
+      "x": 700,
+      "y": 180,
+      "wires": []
+    },
+    {
+      "id": "977a8732.07c998",
+      "type": "inject",
+      "z": "d831d1a4.8d523",
+      "name": "",
+      "topic": "",
+      "payload": "Quanto custo o curso",
+      "payloadType": "str",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 180,
+      "y": 120,
+      "wires": [
+        [
+          "b4df25a4.93e5e8"
+        ]
+      ]
+    },
+    {
+      "id": "c6e86de9.3d659",
+      "type": "inject",
+      "z": "8530800f.d1c77",
+      "name": "",
+      "topic": "",
+      "payload": "",
+      "payloadType": "date",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 120,
+      "y": 300,
+      "wires": [
+        [
+          "379b595f.1e7676"
+        ]
+      ]
+    }
+  ]
