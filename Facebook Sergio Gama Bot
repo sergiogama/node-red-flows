@@ -1,0 +1,2562 @@
+[
+    {
+      "id": "4afd9aca.e2c604",
+      "type": "tab",
+      "label": "Back ChatBot",
+      "disabled": false
+    },
+    {
+      "id": "8e25657a.89e248",
+      "type": "tab",
+      "label": "Audio",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "e64f58b3.568258",
+      "type": "tab",
+      "label": "Localização (Google e Watson)",
+      "disabled": false
+    },
+    {
+      "id": "798e580f.6f9248",
+      "type": "tab",
+      "label": "Find me iPhone",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "103670b4.2baf8f",
+      "type": "tab",
+      "label": "Para uso com Ultimate Bot",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "48c59ec5.35c73",
+      "type": "tab",
+      "label": "Privacidade"
+    },
+    {
+      "id": "dab81674.50b548",
+      "type": "tab",
+      "label": "Bot Multi Language Facebook",
+      "disabled": false,
+      "info": ""
+    },
+    {
+      "id": "bc93133c.0b9ed",
+      "type": "ui_tab",
+      "z": "",
+      "name": "Bluemix Developer",
+      "icon": "dashboard"
+    },
+    {
+      "id": "88cfc329.48957",
+      "type": "ui_group",
+      "z": "",
+      "name": "ChatBot",
+      "tab": "bc93133c.0b9ed",
+      "disp": true,
+      "width": "6",
+      "collapse": false
+    },
+    {
+      "id": "58c1901d.4bb22",
+      "type": "google-api-config",
+      "z": ""
+    },
+    {
+      "id": "6a8e4a5d.79db34",
+      "type": "ui_base",
+      "theme": {
+        "name": "theme-light",
+        "lightTheme": {
+          "default": "#0094CE",
+          "baseColor": "#0094CE",
+          "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+          "edited": true,
+          "reset": false
+        },
+        "darkTheme": {
+          "default": "#097479",
+          "baseColor": "#097479",
+          "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+          "edited": false
+        },
+        "customTheme": {
+          "name": "Untitled Theme 1",
+          "default": "#4B7930",
+          "baseColor": "#4B7930",
+          "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+        },
+        "themeState": {
+          "base-color": {
+            "default": "#0094CE",
+            "value": "#0094CE",
+            "edited": false
+          },
+          "page-titlebar-backgroundColor": {
+            "value": "#0094CE",
+            "edited": false
+          },
+          "page-backgroundColor": {
+            "value": "#fafafa",
+            "edited": false
+          },
+          "page-sidebar-backgroundColor": {
+            "value": "#ffffff",
+            "edited": false
+          },
+          "group-textColor": {
+            "value": "#1bbfff",
+            "edited": false
+          },
+          "group-borderColor": {
+            "value": "#ffffff",
+            "edited": false
+          },
+          "group-backgroundColor": {
+            "value": "#ffffff",
+            "edited": false
+          },
+          "widget-textColor": {
+            "value": "#111111",
+            "edited": false
+          },
+          "widget-backgroundColor": {
+            "value": "#0094ce",
+            "edited": false
+          },
+          "widget-borderColor": {
+            "value": "#ffffff",
+            "edited": false
+          },
+          "base-font": {
+            "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+          }
+        },
+        "angularTheme": {
+          "primary": "indigo",
+          "accents": "blue",
+          "warn": "red",
+          "background": "grey"
+        }
+      },
+      "site": {
+        "name": "Node-RED Dashboard",
+        "hideToolbar": "false",
+        "allowSwipe": "false",
+        "lockMenu": "false",
+        "allowTempTheme": "true",
+        "dateFormat": "DD/MM/YYYY",
+        "sizes": {
+          "sx": 48,
+          "sy": 48,
+          "gx": 6,
+          "gy": 6,
+          "cx": 6,
+          "cy": 6,
+          "px": 0,
+          "py": 0
+        }
+      }
+    },
+    {
+      "id": "c47624c1.534e98",
+      "type": "http in",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "url": "/chat",
+      "method": "get",
+      "upload": false,
+      "swaggerDoc": "ee2e5fdf.09a72",
+      "x": 80,
+      "y": 40,
+      "wires": [
+        [
+          "f0834ca9.43287"
+        ]
+      ]
+    },
+    {
+      "id": "64fa485b.f03318",
+      "type": "http response",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "x": 1470,
+      "y": 700,
+      "wires": []
+    },
+    {
+      "id": "826a4c00.036e88",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "Inglês?",
+      "func": "\nif(global.get(\"idioma\") == \"en\")\n{\n    msg.destlang = global.get(\"idioma\");\n    msg.srclang = \"pt\";\n    \n//    var vResposta = [];\n//    for(x = 0;x <msg.payload.output.text.length;x++)\n//    {\n//        vResposta[x] = {\"text\": msg.payload.output.text[x]};\n//    }\n//    msg.payload = vResposta;\n\n    msg.payload = msg.payload.output.generic[0].text;\n    return [null,msg];\n}\nelse\n{\n    var vResposta = [];\n    for(x = 0;x <msg.payload.output.generic.length;x++)\n    {\n        if(msg.payload.output.generic[x].text.substring(0,8) == \"IMAGEURL\")\n        {\n         var vImage;\n         vImage = msg.payload.output.generic[x].text.substring(9,msg.payload.output.generic[x].text.length);\n         vResposta[x] = {\"attachment\": {\n            \"type\": \"image\",\n            \"payload\": {\n              \"url\": vImage\n            }\n          }\n         }\n        }\n        else if(msg.payload.output.generic[x].text.substring(0,8) == \"VIDEOURL\")\n        {\n         var vImage;\n         vImage = msg.payload.output.generic[x].text.substring(9,msg.payload.output.generic[x].text.length);\n         vResposta[x] = {\"attachment\": {\n            \"type\": \"video\",\n            \"payload\": {\n              \"url\": vImage\n            }\n          }\n         }\n        }\n        else\n        {\n            vResposta[x] = {\"text\": msg.payload.output.generic[x].text};\n        }\n    }\n    //msg.payload = {\"redirect_to_blocks\": [\"Teste\"]} // vResposta;\n    msg.payload = vResposta;\n    return [msg,null];\n}",
+      "outputs": "2",
+      "noerr": 0,
+      "x": 1080,
+      "y": 480,
+      "wires": [
+        [
+          "648160c1.8c7d3",
+          "cb01ad21.977b3",
+          "bf4c9e15.59d77"
+        ],
+        [
+          "fec59873.852088"
+        ]
+      ]
+    },
+    {
+      "id": "80b0a835.c59f78",
+      "type": "watson-language-translator-identify",
+      "z": "4afd9aca.e2c604",
+      "name": "Identifica idioma",
+      "default-endpoint": false,
+      "service-endpoint": "https://gateway.watsonplatform.net/language-translator/api",
+      "x": 510,
+      "y": 254,
+      "wires": [
+        [
+          "edd7dc21.b1aaf"
+        ]
+      ]
+    },
+    {
+      "id": "edd7dc21.b1aaf",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "Qual o idioma?",
+      "func": "global.set(\"idioma\",\"pt\");\n\nmsg.user = global.get(\"usuario\");\nif(msg.lang.confidence > 0.7)\n{\n    global.set(\"idioma\",msg.lang.language);\n    if(global.get(\"idioma\") == \"en\")\n    {\n        msg.srclang = global.get(\"idioma\");\n        msg.destlang = \"pt\";\n        return [null,msg,null];\n    }\n    else if(global.get(\"idioma\") != \"pt\" && \n            global.get(\"idioma\") != \"it\" &&\n            global.get(\"idioma\") != \"hu\") \n    {\n        return [null,null,msg];\n    }\nelse\n    {\n        global.set(\"idioma\",\"pt\");\n    }\n}\nreturn [msg,null,null];    \n",
+      "outputs": "3",
+      "noerr": 0,
+      "x": 180,
+      "y": 353,
+      "wires": [
+        [
+          "e0479fa4.98a3f"
+        ],
+        [
+          "d1ab9b7a.8d9628"
+        ],
+        [
+          "616cad42.22c7c4"
+        ]
+      ]
+    },
+    {
+      "id": "d1ab9b7a.8d9628",
+      "type": "watson-translator",
+      "z": "4afd9aca.e2c604",
+      "name": "Inglês -> Port",
+      "action": "translate",
+      "basemodel": "ar-en",
+      "domain": "general",
+      "srclang": "en",
+      "destlang": "pt",
+      "password": "",
+      "apikey": "e9rWn1WlpldWcbXQ2pM_d-O7pBnozErS_xGgBGLAuPId",
+      "custom": "",
+      "domainhidden": "general",
+      "srclanghidden": "en",
+      "destlanghidden": "pt",
+      "basemodelhidden": "ar-en",
+      "customhidden": "",
+      "filetype": "forcedglossary",
+      "trainid": "",
+      "lgparams2": true,
+      "neural": false,
+      "default-endpoint": false,
+      "service-endpoint": "https://gateway.watsonplatform.net/language-translator/api",
+      "x": 360.25000762939453,
+      "y": 352.7500057220459,
+      "wires": [
+        [
+          "e0479fa4.98a3f"
+        ]
+      ]
+    },
+    {
+      "id": "fec59873.852088",
+      "type": "watson-translator",
+      "z": "4afd9aca.e2c604",
+      "name": "Port -> Inglês",
+      "action": "translate",
+      "basemodel": "ar-en",
+      "domain": "general",
+      "srclang": "pt",
+      "destlang": "en",
+      "password": "",
+      "apikey": "e9rWn1WlpldWcbXQ2pM_d-O7pBnozErS_xGgBGLAuPId",
+      "custom": "",
+      "domainhidden": "general",
+      "srclanghidden": "pt",
+      "destlanghidden": "en",
+      "basemodelhidden": "ar-en",
+      "customhidden": "",
+      "filetype": "forcedglossary",
+      "trainid": "",
+      "lgparams2": true,
+      "neural": false,
+      "default-endpoint": false,
+      "service-endpoint": "https://gateway.watsonplatform.net/language-translator/api",
+      "x": 1140,
+      "y": 380,
+      "wires": [
+        [
+          "b6fceee3.69763"
+        ]
+      ]
+    },
+    {
+      "id": "b6fceee3.69763",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "Resposta",
+      "func": "msg.payload=\n[{\"text\":msg.payload}];\nreturn msg;\n",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 1263.25,
+      "y": 546.25,
+      "wires": [
+        [
+          "648160c1.8c7d3"
+        ]
+      ]
+    },
+    {
+      "id": "1294fc3e.678fc4",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "Imagem, Localização ou Mensagem?",
+      "func": "//global.set(\"audio\",false); \nvar aux = msg.payload.length;\nvar lat;\nvar lon;\nglobal.set(\"msgimagens\", \"\");\nif(aux > 15) // Imagem\n{\n    //node.error(\"Imagem: \" + msg.payload.substring(0,29),msg)\n    if(msg.payload.substring(0,16) == \"https://scontent\")\n    {\n        //msg.payload = msg.payload; //.substring(0,aux+1);\n        global.set(\"chuva\",false);\n        node.status({fill:\"green\",shape:\"dot\",\n            text:global.get(\"nome\") + \" \" + global.get(\"sobrenome\") + \" enviou uma imagem\"});\n        return [msg,null,null,null,null];\n    }\n}\n\nif(aux > 20) // Audio\n{\n    //node.error(\"Audio: \" + msg.payload\n    if(msg.payload.substring(0,21) == \"https://cdn.fbsbx.com\")\n    {\n        global.set(\"audio\",true);\n        msg.payload = msg.payload; //.substring(0,aux+1);\n        node.status({fill:\"green\",shape:\"dot\",\n            text:global.get(\"nome\") + \" \" + global.get(\"sobrenome\") + \" enviou um aúdio\"});\n        return [null,null,null,null,msg];\n    }\n}\n\n\nif(aux > 32) // Localização\n{\n    if(msg.payload.substring(0,32) == \"http://www.google.com/maps/place\")\n    {\n        lat = msg.payload.substring(33,msg.payload.search(\",\")+1);\n        lon = msg.payload.substring(msg.payload.search(\",\")+1,aux);\n        msg.payload = lat +\n                      lon;\n        msg.lat = lat;\n        msg.lon = lon;\n        msg.tipo = \"L\";\n        global.set(\"chuva\",false);\n        node.status({fill:\"green\",shape:\"dot\",\n            text:global.get(\"nome\") + \" \" + global.get(\"sobrenome\") + \" enviou uma localização\"});\n        return [null,msg,null,null,null];\n    }\n}\n//msg.payload = msg.payload.substring(1,aux+1);\nif(aux > 1) // Mensagem\n{\n    if(global.get(\"chuva\") && global.get(\"userchuva\") == global.get(\"usuario\"))\n    {\n        msg.tipo = \"E\";\n        msg.mensagem = msg.payload;\n        global.set(\"chuva\",false);\n        node.status({fill:\"green\",shape:\"dot\",\n            text:global.get(\"nome\") + \" \" + global.get(\"sobrenome\") + \" quer saber sobre clima\"});\n        return [null,null,null,msg,null];\n    }\n        node.status({fill:\"green\",shape:\"dot\",\n            text:global.get(\"nome\") + \" \" + global.get(\"sobrenome\")  + \" enviou um texto\"});\n    return [null,null,msg,null,null];\n}\nelse\n{\n    return [null,null,null,null,null];\n}",
+      "outputs": "5",
+      "noerr": 0,
+      "x": 193,
+      "y": 240.25000762939453,
+      "wires": [
+        [
+          "7ea90515.4bf4dc",
+          "7f597e34.9d8d5",
+          "de79b881.e911e8",
+          "cc67e7cc.2bae48"
+        ],
+        [
+          "7ea90515.4bf4dc",
+          "fcd4d807.b530e8"
+        ],
+        [
+          "80b0a835.c59f78",
+          "7ea90515.4bf4dc"
+        ],
+        [
+          "7ea90515.4bf4dc",
+          "fcd4d807.b530e8"
+        ],
+        [
+          "5d46a6de.af33d8"
+        ]
+      ]
+    },
+    {
+      "id": "96aa0363.7ea31",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "Clima",
+      "func": "node.warn(\"<------ Passo 0 - Clima -----> \" + global.get(\"quando\"));\nif(global.get(\"quando\") && global.get(\"quando\").length > 0)\n{\n    node.warn(\"<------ Passo 1 - Clima -----> \" + global.get(\"quando\"));\n    msg.payload = \"\";\n    var vExiste = false;\n    if(global.get(\"quando\").length <= 1)\n    {\n        node.warn(\"<------ Passo 2 - Clima -----> \" + global.get(\"quando\")[0]);\n        var h = new Date();\n        var d = new Date(global.get(\"quando\")[0]);\n        d = d.getDate()+d.getMonth()+d.getFullYear();\n        h = h.getDate()+h.getMonth()+h.getFullYear();\n        if(d == h)\n        {\n           msg.payload = global.get(\"nome\") + \", a previsão é a seguinte para hoje, \";\n            msg.payload += msg.forecasts[0].dow + \", \" +  \n            msg.forecasts[0].narrative + \"\\n\";   \n            vExiste=true;\n        }\n        else\n        {\n            msg.payload = global.get(\"nome\") + \n            \", A previsão para \";\n            var d1 = new Date(global.get(\"quando\")[0]);\n            d1 = d1.getDate()+d1.getMonth()+d1.getFullYear();\n            for(y = 0; y <  msg.forecasts.length; y++)\n            {\n                var df = new Date(msg.forecasts[y].fcst_valid_local.substring(0,10));\n                df = df.getDate()+df.getMonth()+df.getFullYear();\n                if(df === d1)\n               {\n                    msg.payload += msg.forecasts[y].dow + \" é \" +  \n                    msg.forecasts[y].narrative + \"\\n\";   \n                    vExiste = true;\n                    break;\n               }\n               \n            }\n\n        }\n    }\n    else\n    {\n        node.warn(\"<------ Passo 3 - Clima -----> \" + global.get(\"quando\"));\n        var d1 = new Date(global.get(\"quando\")[0]);\n        node.warn(\"<------ Passo 3.1 - Clima -----> \" + d1);\n        var d2 = new Date(global.get(\"quando\")[1]);\n        node.warn(\"<------ Passo 3.1.1 - Clima -----> \" + d2);\n        for(y = 0; y <  msg.forecasts.length; y++)\n        {\n            var df = new Date(msg.forecasts[y].fcst_valid_local.substring(0,10));\n            node.warn(\"<------ Passo 4.0 - Clima -----> \" + df);\n            if(+df >= +d1 && +df < +d2)\n           {\n                node.warn(\"<------ Passo 5 - Clima -----> \" + msg.forecasts[y].dow);\n                msg.payload += msg.forecasts[y].dow + \" é \" +  \n                msg.forecasts[y].narrative + \"\\n\";   \n                vExiste = true;\n           }\n           \n        }\n    }\n    if(global.get(\"endereco\").length > 1)\n    {\n        msg.payload += \"(\" + global.get(\"endereco\") + \")\";\n    }\n    if(global.get(\"quando\").length > 1)\n    {\n        msg.payload = global.get(\"nome\") + \n        \", a previsão é:\\n\" + msg.payload;\n    }\n\n    if(!vExiste)\n    {\n        var vDate = new Date(global.get(\"quando\")[0])\n        msg.payload = \"Desculpe-me mas não tenho previsão de clima para \" + \n        vDate.getDate() + \"/\" + (vDate.getMonth() + 1) + \"/\" + vDate.getFullYear();\n    }\n}\nelse\n{\n    msg.payload = global.get(\"nome\") + \n    \", A previsão para os próximos dias é:\\n\" + \n    \"Hoje, \" + msg.forecasts[0].dow + \", \" + msg.forecasts[0].narrative + \"\\n\" +\n    \"Amanhã, \" + msg.forecasts[1].dow + \", \" + msg.forecasts[1].narrative + \"\\n\" +\n    \"E \" + msg.forecasts[2].dow + \", \" + msg.forecasts[2].narrative;\n    if(global.get(\"endereco\").length > 1)\n    {\n        msg.payload += \"\\n(\" + global.get(\"endereco\") + \")\";\n    }\n}\n\nglobal.set(\"userchuva\",\" \");\nglobal.set(\"chuva\",false);\nglobal.set(\"quando\",[]);\nglobal.set(\"endereco\",\"\");\n\nif(global.get(\"idioma\") == \"en\")\n{\n    msg.destlang = global.get(\"idioma\");\n    msg.srclang = \"pt\";\n    return [null,msg];\n}\nelse\n{\n    msg.payload=\n    [{\"text\":msg.payload}];\n    return [msg,null];\n}\n",
+      "outputs": "2",
+      "noerr": 0,
+      "x": 844.0000801086426,
+      "y": 230.2500123977661,
+      "wires": [
+        [
+          "648160c1.8c7d3"
+        ],
+        [
+          "fec59873.852088"
+        ]
+      ]
+    },
+    {
+      "id": "715d93e0.aa130c",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "Imagem",
+      "func": "var aux;\nif(msg.result.images.length > 0)\n{\n    if(msg.result.images[0].faces)\n    {\n        if(msg.payload.length > 1)\n        {\n            aux = msg.payload + \", \";\n        }\n        else\n        {\n            aux = msg.payload + \"Parece ser \";\n        }\n        var tam = aux.length;\n        for(x = 0; x < msg.result.images[0].faces.length; x++)\n        {\n            \n            if(aux.length > tam)\n            {\n                aux += \"e \";\n            }\n        \n            if(msg.result.images[0].faces[x].age.min >= 55 && msg.result.images[0].faces[x].gender.gender == \"MALE\")\n            {\n                aux += \"um senhor com idade acima de \" + msg.result.images[0].faces[x].age.min;\n            } else if(msg.result.images[0].faces[x].age.min >= 45 && msg.result.images[0].faces[x].gender.gender == \"MALE\")\n            {\n                aux += \"um jovem senhor com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            } else if(msg.result.images[0].faces[x].age.min >= 35 && msg.result.images[0].faces[x].gender.gender == \"MALE\")\n            {\n                aux += \"um homem com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            } else if(msg.result.images[0].faces[x].age.min >= 25 && msg.result.images[0].faces[x].gender.gender == \"MALE\")\n            {\n                aux += \"um rapaz com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            } else if(msg.result.images[0].faces[x].age.min >= 15 && msg.result.images[0].faces[x].gender.gender == \"MALE\")\n            {\n                aux += \"um jovem com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            }\n        \n            if(msg.result.images[0].faces[x].age.min >= 55 && msg.result.images[0].faces[x].gender.gender == \"FEMALE\")\n            {\n                aux += \"uma senhora com idade superior à \" + msg.result.images[0].faces[x].age.min;\n            } else if(msg.result.images[0].faces[x].age.min >= 45 && msg.result.images[0].faces[x].gender.gender == \"FEMALE\")\n            {\n                aux += \"uma jovem senhora com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            } else if(msg.result.images[0].faces[x].age.min >= 35 && msg.result.images[0].faces[x].gender.gender == \"FEMALE\")\n            {\n                aux += \"uma mulher com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            } else if(msg.result.images[0].faces[x].age.min >= 25 && msg.result.images[0].faces[x].gender.gender == \"FEMALE\")\n            {\n                aux += \"uma garota com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            } else if(msg.result.images[0].faces[x].age.min >= 15 && msg.result.images[0].faces[x].gender.gender == \"FEMALE\")\n            {\n                aux += \"uma jovem com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            }\n    \n            aux += \" anos.\\n\";\n    //        msg.payload += \" anos.\";\n              \n            if(msg.result.images[0].faces[x].identity)\n            {\n                aux += \" Parece-me ser \" + msg.result.images[0].faces[x].identity.name+ \"!\\n\"\n            }\n        }\n        if(aux == \"Eu vejo \")\n            msg.payload = \"Desculpe-me, mas não reconheço esta imagem\";\n        else\n            msg.payload = aux;\n    }\n    else\n    {\n        if(global.get(\"msgimagens\").length < 0)\n        {\n//            msg.payload = context.global.msgimagens;\n//        }\n//        else\n//        {\n            msg.payload = \"Desculpe-me, mas não reconheço esta imagem\";\n        }\n    }\n    \n}\nelse\n{\n    msg.payload = \"Desculpe-me, mas não reconheço um rosto nesta imagem\";\n}\n\nif(global.get(\"idioma\") == \"en\")\n{\n    msg.destlang = global.get(\"idioma\");\n    msg.srclang = \"pt\";\n    return [null,msg];\n}\nelse\n{\n    msg.payload=\n    [{\"text\":msg.payload}/*,\n    {\n      \"attachment\": {\n        \"type\": \"template\",\n        \"payload\": {\n          \"template_type\": \"button\",\n          \"text\": \"Teste!\",\n          \"buttons\": [\n            {\n              \"type\": \"show_block\",\n              \"block_name\": \"some block name\",\n              \"title\": \"Show the block!\"\n            },\n            {\n              \"type\": \"web_url\",\n              \"url\": \"https://www.bluemix.net\",\n              \"title\": \"Bluemix\"\n            }\n          ]\n        }\n      }\n    }\n//    {\n//      \"attachment\": {\n//        \"type\": \"image\",\n//        \"payload\": {\n//          \"url\": \"https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/c/5/2/3/highres_434450467.jpeg\"\n//        }\n//      }\n//    } */\n];\n    return [msg,null];\n}",
+      "outputs": "2",
+      "noerr": 0,
+      "x": 1140,
+      "y": 260,
+      "wires": [
+        [
+          "d42b3b87.9665b8"
+        ],
+        [
+          "fec59873.852088"
+        ]
+      ]
+    },
+    {
+      "id": "8eaa9853.baf5c8",
+      "type": "weather_insights",
+      "z": "4afd9aca.e2c604",
+      "name": "Previsão",
+      "host": "twcservice.mybluemix.net",
+      "service": "/forecast/daily/10day.json",
+      "geocode": "",
+      "units": "m",
+      "language": "pt-BR",
+      "x": 706.5000457763672,
+      "y": 230.5000123977661,
+      "wires": [
+        [
+          "96aa0363.7ea31",
+          "f3080307.3c459"
+        ]
+      ]
+    },
+    {
+      "id": "340d4413.1271ec",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "Chuva ou onde esta meu celular",
+      "func": "global.set(\"userchuva\",\" \");\nglobal.set(\"chuva\",false);\nglobal.set(\"quando\",[]);\nglobal.set(\"resposta\", \"\");\nvar vData = new Date();\n\nif(msg.payload.output.intents.length > 0)\n{\n    if(msg.payload.output.intents[0].intent == \"vaichover\")\n    {\n        global.set(\"userchuva\", global.get(\"usuario\"));\n        global.set(\"chuva\",true);\n        global.set(\"quando\", []);\n        var aux = 0;\n        for(x = 0; x < msg.payload.output.entities.length; x++)\n        {\n            if(msg.payload.output.entities[x].entity == \"sys-date\")\n            {\n                global.set(\"quando[\"+aux+\"]\",msg.payload.output.entities[x].value);\n                aux++;\n            }\n        }\n        \n        node.warn(\"<------ ITENS GAMA -----> \" + global.get(\"quando\").length);\n        for(a = 0; a < global.get(\"quando\").length; a++)\n        {\n            node.warn(\"<------ ITEM GAMA -----> \" + global.get(\"quando\")[a]);\n        }\n        \n        global.set(\"resposta\",msg.payload.output.generic[0].text);\n        msg.payload = msg.req.query.mensagem; //msg.payload.input.text.substring(0,msg.payload.input.text.length);\n        msg.tipo = \"M\";\n        msg.mensagem = msg.payload;\n        return [null,msg,null,null];\n    }\n    else if(msg.payload.output.intents[0].intent == \"ondeestameucelular\" && global.get(\"nome\") == \"Sergio\" && global.get(\"sobrenome\") == \"Gama\")\n    {\n         return [null,null,msg,null];   \n    }\n    else if(msg.payload.output.intents[0].intent == \"O_que_acha_do_usuario\" && msg.payload.entities.length > 0)\n    {\n        if(msg.payload.output.entities[0].value == \"nome\")\n        {\n            msg.payload = global.set(\"nome\") + \" \" + global.get(\"sobrenome\");\n             return [null,null,null,msg]; \n        }\n    }\n    \n}\n\nreturn [msg,null,null,null];",
+      "outputs": "4",
+      "noerr": 0,
+      "x": 810.5000076293945,
+      "y": 326.00000762939453,
+      "wires": [
+        [
+          "826a4c00.036e88"
+        ],
+        [
+          "fcd4d807.b530e8"
+        ],
+        [
+          "11c0affb.4f446"
+        ],
+        [
+          "b6fceee3.69763"
+        ]
+      ]
+    },
+    {
+      "id": "44bffddf.2c7e64",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "Local, Port e Inglês",
+      "func": "if(msg.payload == \"Feriado\" && global.get(\"quando\").length > 0)\n{\n    msg.payload = \"Eu ainda não consigo fazer pesquisa por feriado.\\nPosso te dar uma previsão por data ou por dia da semana, mas no máximo dos próximos 10 dias.\" + \"\\n\" +\n                  \"Por favor, envie a localização que deseja saber sobre o clima.\"\n\n//    context.global.quando = \" \";\n}\nelse if(msg.payload == \"Nenhum Local\")\n{\n    msg.payload = global.get(\"resposta\");\n}\n//else if(context.global.quando != \" \")\n//{\n//    msg.payload = context.global.resposta;\n//}\nelse if(msg.payload == \"Error\")\n{\n    msg.payload = \"Desculpe-me, mas não consegui processar a sua mensagem (local)\";\n    global.set(\"chuva\",false);\n}\n\nelse\n{\n    if(msg.tipo == \"L\"){\n    msg.payload = msg.lat +\n                  msg.lon;\n    }\n    msg.payload = msg.payload.replace(\" \", \"\");\n    return [msg,null,null];\n}\n\nif(global.get(\"idioma\") == \"en\")\n{\n    msg.destlang = global.get(\"idioma\");\n    msg.srclang = \"pt\";\n    return [null,null,msg];\n}\nelse\n{\n    msg.payload=\n    [{\"text\":msg.payload}];\n    return [null,msg,null];\n}\n",
+      "outputs": "3",
+      "noerr": 0,
+      "x": 810,
+      "y": 420,
+      "wires": [
+        [
+          "8eaa9853.baf5c8"
+        ],
+        [
+          "648160c1.8c7d3"
+        ],
+        [
+          "fec59873.852088"
+        ]
+      ]
+    },
+    {
+      "id": "96ea3401.943188",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "Nada, Pessoa ou Imagem",
+      "func": "var isPerson = false;\nvar auxMsg = \"\";\nglobal.set(\"msgimagens\",\"\");\nif(msg.result.images)\n{\n    for(x = 0; x < msg.result.images[0].classifiers.length; x++)\n    {\n        //auxMsg += \"Model: \" + msg.result.images[0].classifiers[x].classifier_id + \":\\n\";\n\n        for(y = 0; y < msg.result.images[0].classifiers[x].classes.length; y++)\n        {\n            if(msg.result.images[0].classifiers[x].classes[y].class == \"people\" || msg.result.images[0].classifiers[x].classes[y].class == \"person\")\n            {\n                isPerson = true;\n                break;\n            }\n            auxMsg += msg.result.images[0].classifiers[x].classes[y].class + \" (\" + \n                      Math.floor(msg.result.images[0].classifiers[x].classes[y].score.toFixed(2) * 100) + \"%) - \";\n        }\n        auxMsg += \"\\n\";\n        if(isPerson)\n            global.set(\"msgimagens\",\"\");\n        else\n                global.set(\"msgimagens\",auxMsg + \"\\n\");\n    }\n}\nelse\n{\n    \n    if(global.get(\"idioma\") == \"en\")\n    {\n        msg.payload=\n        [{\"text\":\"Sorry, but I didn't recognize figures inside this image\"}];\n    }\n    else\n    {\n        msg.payload=\n        [{\"text\":\"Desculpe-me, mas não reconheci nenhuma figura nesta foto\"}];\n    }\n    \n    return [msg,null,null]\n}\n//if(isPerson)\n//{\n//    msg.payload = msg.result.images[0].source_url;\n//    return [null,msg,null]\n//}\n//else\n//{\n    msg.payload = context.global.msgimagens;\n    return [null,null,msg];\n//}\n//return msg;",
+      "outputs": "3",
+      "noerr": 0,
+      "x": 750,
+      "y": 40,
+      "wires": [
+        [
+          "648160c1.8c7d3"
+        ],
+        [
+          "9c4d5895.7d1538"
+        ],
+        [
+          "b2ced511.956be8"
+        ]
+      ]
+    },
+    {
+      "id": "9c4d5895.7d1538",
+      "type": "visual-recognition-v3",
+      "z": "4afd9aca.e2c604",
+      "name": "Detecção de rosto",
+      "vr-service-endpoint": "https://gateway.watsonplatform.net/visual-recognition/api",
+      "image-feature": "detectFaces",
+      "lang": "en",
+      "x": 923.0000152587891,
+      "y": 127.00000381469727,
+      "wires": [
+        [
+          "b2ced511.956be8"
+        ]
+      ]
+    },
+    {
+      "id": "5de826cf.43ecf8",
+      "type": "http request",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "method": "GET",
+      "ret": "txt",
+      "url": "https://sergiogama.mybluemix.net/ondeestameucelular",
+      "tls": "",
+      "x": 743.5,
+      "y": 725.0000057220459,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "1fe458be.31cf37",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "if(msg.payload === \"Erro\")\n{\n    msg.payload = \"Desculpe-me, mas não consegui processar a sua mensagem (OndeEstaCelular)\";\n}\nmsg = {\"payload\":{\"output\":{\"text\":[msg.payload]}}};\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 1010,
+      "y": 520,
+      "wires": [
+        [
+          "826a4c00.036e88"
+        ]
+      ]
+    },
+    {
+      "id": "616cad42.22c7c4",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "var vIdiomas = [];\nvIdiomas = \n[{\"codigo\":\"es\",\"nome\":\"espanhol\"}, \n{\"codigo\":\"de\",\"nome\":\"alemão\"},\n{\"codigo\":\"zh\",\"nome\":\"chinês simplicado\"},\n{\"codigo\":\"zh-TW\",\"nome\":\"chinês tradicional\"},\n{\"codigo\":\"fr\",\"nome\":\"francês\"},\n{\"codigo\":\"ja\",\"nome\":\"japonês\"},\n{\"codigo\":\"pl\",\"nome\":\"polonês\"},\n{\"codigo\":\"ru\",\"nome\":\"russo\"},\n{\"codigo\":\"ar\",\"nome\":\"árabe\"},\n{\"codigo\":\"ko\",\"nome\":\"koreano\"},\n{\"codigo\":\"el\",\"nome\":\"grego\"},\n{\"codigo\":\"he\",\"nome\":\"hebraíco\"},\n{\"codigo\":\"hi\",\"nome\":\"hindi\"},\n{\"codigo\":\"nl\",\"nome\":\"holandês\"}];\n\nfor(x = 0; x < vIdiomas.length; x++)\n{\n    if(global.get(\"idioma\") == vIdiomas[x].codigo)\n    {\n        msg.payload = \"Desculpe-me, mas ainda não estou preparado para me comunicar em \" + vIdiomas[x].nome;\n        msg.payload += \". Neste momento podemos nos comunicar em inglês e português. Agradeço a compreensão\";\n        global.set(\"idioma\",\"pt\");\n        return msg;\n    }\n}\nmsg.payload = \"Desculpe-me, mas neste momento podemos nos comunicar em Inglês e Português. Agradeço a compreensão(\" + context.global.idioma + \")\";\nglobal.set(\"idioma\",\"pt\");\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 331.00000381469727,
+      "y": 398.75000762939453,
+      "wires": [
+        [
+          "fec59873.852088"
+        ]
+      ]
+    },
+    {
+      "id": "5892a709.989bf8",
+      "type": "catch",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "scope": [
+        "c47624c1.534e98",
+        "e4c0dd83.7d74f",
+        "80b0a835.c59f78",
+        "d1ab9b7a.8d9628",
+        "fec59873.852088",
+        "8eaa9853.baf5c8",
+        "9c4d5895.7d1538",
+        "1a29e304.7b12ad",
+        "c66ce865.f0a978",
+        "1189028f.bca3bd"
+      ],
+      "uncaught": false,
+      "x": 260.75000381469727,
+      "y": 549.4999990463257,
+      "wires": [
+        [
+          "f203f521.371bb8",
+          "93f8c52b.f9f9f8",
+          "aba294a3.e31d78"
+        ]
+      ]
+    },
+    {
+      "id": "f203f521.371bb8",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "msg.payload = \"Algo deu errado :-) <br> Tente mais tarde tá?\";\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 452.00000381469727,
+      "y": 548.5000114440918,
+      "wires": [
+        [
+          "b6fceee3.69763"
+        ]
+      ]
+    },
+    {
+      "id": "1a29e304.7b12ad",
+      "type": "visual-recognition-v3",
+      "z": "4afd9aca.e2c604",
+      "name": "Classificação de Imagem",
+      "vr-service-endpoint": "https://gateway.watsonplatform.net/visual-recognition/api",
+      "image-feature": "classifyImage",
+      "lang": "en",
+      "x": 650,
+      "y": 160,
+      "wires": [
+        [
+          "96ea3401.943188",
+          "45629ca7.9517c4"
+        ]
+      ]
+    },
+    {
+      "id": "b2ced511.956be8",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "msg.payload = global.get(\"msgimagens\");\nif(global.get(\"msgimagens\").length > 1)\n{\n    if(global.get(\"idioma\") === \"pt\")\n    {\n        msg.destlang = global.get(\"idioma\");\n        msg.srclang = \"en\";\n        return [msg,null];        \n    }\n}\nreturn [null,msg];",
+      "outputs": "2",
+      "noerr": 0,
+      "x": 955.5,
+      "y": 199,
+      "wires": [
+        [
+          "715d93e0.aa130c"
+        ],
+        [
+          "715d93e0.aa130c",
+          "161264b0.af29cb",
+          "4033fc55.d7bf24"
+        ]
+      ]
+    },
+    {
+      "id": "c66ce865.f0a978",
+      "type": "watson-translator",
+      "z": "4afd9aca.e2c604",
+      "name": "Inglês -> Port",
+      "action": "translate",
+      "basemodel": "ar-en",
+      "domain": "general",
+      "srclang": "en",
+      "destlang": "pt",
+      "password": "",
+      "apikey": "e9rWn1WlpldWcbXQ2pM_d-O7pBnozErS_xGgBGLAuPId",
+      "custom": "",
+      "domainhidden": "general",
+      "srclanghidden": "en",
+      "destlanghidden": "pt",
+      "basemodelhidden": "ar-en",
+      "customhidden": "",
+      "filetype": "forcedglossary",
+      "trainid": "",
+      "lgparams2": true,
+      "neural": false,
+      "default-endpoint": false,
+      "service-endpoint": "https://gateway.watsonplatform.net/language-translator/api",
+      "x": 1160,
+      "y": 160,
+      "wires": [
+        [
+          "715d93e0.aa130c",
+          "161264b0.af29cb",
+          "bf4c9e15.59d77"
+        ]
+      ]
+    },
+    {
+      "id": "d42b3b87.9665b8",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "/*msg.payload = [\n    {\n      \"attachment\":{\n        \"type\":\"template\",\n        \"payload\":{\n          \"template_type\":\"generic\",\n          \"elements\":[\n            {\n              \"title\":\"Classic White T-Shirt\",\n              \"image_url\":\"http://petersapparel.parseapp.com/img/item100-thumb.png\",\n              \"subtitle\":\"Soft white cotton t-shirt is back in style\",\n              \"buttons\":[\n                {\n                  \"type\":\"web_url\",\n                  \"url\":\"https://petersapparel.parseapp.com/view_item?item_id=100\",\n                  \"title\":\"View Item\"\n                },\n                {\n                  \"type\":\"web_url\",\n                  \"url\":\"https://petersapparel.parseapp.com/buy_item?item_id=100\",\n                  \"title\":\"Buy Item\"\n                }\n              ]\n            },\n            {\n              \"title\":\"Classic Grey T-Shirt\",\n              \"image_url\":\"http://petersapparel.parseapp.com/img/item101-thumb.png\",\n              \"subtitle\":\"Soft gray cotton t-shirt is back in style\",\n              \"buttons\":[\n                {\n                  \"type\":\"web_url\",\n                  \"url\":\"https://petersapparel.parseapp.com/view_item?item_id=101\",\n                  \"title\":\"View Item\"\n                },\n                {\n                  \"type\":\"web_url\",\n                  \"url\":\"https://petersapparel.parseapp.com/buy_item?item_id=101\",\n                  \"title\":\"Buy Item\"\n                }\n              ]\n            }\n          ]\n        }\n      }\n    }\n  ];*/\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 1285.3472747802734,
+      "y": 263.62852239608765,
+      "wires": [
+        [
+          "648160c1.8c7d3"
+        ]
+      ]
+    },
+    {
+      "id": "4ca6f089.79a16",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "ChatFuel Post processing",
+      "func": "// declaração de variáveis\nvar newmsg = msg;\nvar text_array = [{}];\n\n// o chatfuel has limit of text size\n// this array can split in different messages\n\nfor(var i = 0; i < msg.payload.output.text.length;i++){\n    text_array[i]={text:msg.payload.output.text[i]};\n    node.log(\"text array : \"+JSON.stringify(text_array[i])) ;\n}\n\n// handling the image url to add in the message return\nif (msg.payload.output.img_url !== null){\n    var attimg = {};\n    \n    attimg = {\n      attachment: {\n        type: \"image\",\n        payload: {\n          url: msg.payload.output.img_url\n        }\n      }\n    }\n\n    \n    node.log(\"img att: \"+JSON.stringify(attimg));\n}\n\n    \ntext_array.push(attimg);\n\nnewmsg.payload.messages = text_array;\n          \nreturn newmsg;\n\n/****************************************\n * msg example comming from conversation dialog, \n * splited in 3 and with image\n * Ricardo Kubo : nov/2016\n *\n {\n  \"output\": {\n    \"text\": [\n      \"A National Retail Federation (NRF) é a maior associacao de varejo nos EUA e anualmente faz o maior evento de varejo mundial em Nova Iorque. Este evento ocorre sempre em janeiro e é popularmente conhecido como NRF (http://nrfbigshow.nrf.com/) .\",\n      \"Se não conhece, recomendo muito ir uma vez, além de centenas de palestras com varejistas do mundo inteiro, tem uma feira enorme com fornecedores de soluções que é muito bom para ficar antenado com tendências.Em 2016 foram mais de 33000 atendentes e com mais de 3200 varejistas representados. \",\n      \"Se quiser saber mais como foi em 2016, veja meus posts do linkedin: https://www.linkedin.com/pulse/nrf-2016-primeiro-dia-ricardo-kubo?trk=mp-author-card\"\n    ],\n    \"img_url\": \"https://pbs.twimg.com/media/CZAVX4mWUAAqrR0.jpg\"\n  }\n}\n*************************************/\n\n/********************************************************\n * chatfuel expected json example\n * Ricardo Kubo : nov/2016\nmsg.payload = {\n  messages: [\n    {\"text\": \"Welcome to our store!\"},\n    {\"text\": \"segunda linha\"},\n      {\n      attachment: {\n        type: \"image\",\n        payload: {\n          url: \"https://pbs.twimg.com/profile_images/665334336284004354/qFdaTsJ7.jpg\"\n        }\n      }\n    },\n    {\n      attachment: {\n        type: \"video\",\n        payload: {\n          url: \"https://www.youtube.com/watch?v=vxuioqr9fXE\"\n        }\n      }\n    }\n  ]\n};\n\nreturn msg;\n\n*/\n",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 150,
+      "y": 500,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "7ea90515.4bf4dc",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "var cont = global.get(\"cont\",0) || 0;\ncont += 1;\nglobal.set(\"cont\",cont);\nmsg.payload = cont;\nmsg =\n{payload:msg.payload, \n usuario:global.get(\"nome\") + \" \" + global.get(\"sobrenome\"),\n foto:global.get(\"foto\")    \n};\n\nreturn [msg,{payload:msg.usuario},{payload:msg.foto}];\n",
+      "outputs": "3",
+      "noerr": 0,
+      "x": 642.71875,
+      "y": 578.2395935058594,
+      "wires": [
+        [
+          "24532166.399b6e"
+        ],
+        [
+          "56a61a6f.a0ec04"
+        ],
+        [
+          "aa757799.41e5c8",
+          "4033fc55.d7bf24"
+        ]
+      ]
+    },
+    {
+      "id": "1189028f.bca3bd",
+      "type": "cloudant out",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "cloudant": "",
+      "database": "chat_db",
+      "service": "GAMA-Facebook-Bluemix-Developer-cloudantNoSQLDB",
+      "payonly": true,
+      "operation": "insert",
+      "x": 724.7188148498535,
+      "y": 517.4271488189697,
+      "wires": []
+    },
+    {
+      "id": "aa757799.41e5c8",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "var aux = msg.payload.length;\nif(msg.payload.substring(0,29) == \"https://scontent.xx.fbcdn.net\" ||\n   msg.payload.substring((aux-3),aux+1) == \"jpg\")\n{\n    msg.payload = msg.payload.substring(0,aux+1);\n    return msg;\n}\n",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 740.7222290039062,
+      "y": 780.4618225097656,
+      "wires": [
+        [
+          "affcb84e.f1d778"
+        ]
+      ]
+    },
+    {
+      "id": "93f8c52b.f9f9f8",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "msg = \n{\"erro\": \"Erro: \" + msg.error.message,\n \"origem_id\": \"Origem id: \" + msg.error.source.id,\n \"origem_tipo\": \"Origem tipo: \" + msg.error.source.type,\n \"origem_nome\": \"Origem nome: \" + msg.error.source.name,\n \"datahora\": \"Data e hora: \" + Date()\n};\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 285.27085876464844,
+      "y": 713.3611145019531,
+      "wires": [
+        [
+          "d1add73.5f37328"
+        ]
+      ]
+    },
+    {
+      "id": "195467de.a43138",
+      "type": "inject",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "topic": "",
+      "payload": "",
+      "payloadType": "date",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "x": 81.27778625488281,
+      "y": 843.9687805175781,
+      "wires": [
+        [
+          "5a646629.659f68"
+        ]
+      ]
+    },
+    {
+      "id": "5a646629.659f68",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "global.set(\"cont\",5236);\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 279.28126525878906,
+      "y": 844.8020935058594,
+      "wires": [
+        [
+          "7ea90515.4bf4dc"
+        ]
+      ]
+    },
+    {
+      "id": "aba294a3.e31d78",
+      "type": "debug",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "active": false,
+      "console": "false",
+      "complete": "true",
+      "x": 1015.2708282470703,
+      "y": 770.8958435058594,
+      "wires": []
+    },
+    {
+      "id": "161264b0.af29cb",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "var aux;\nif(msg.result.images.length > 0)\n{\n    if(msg.result.images[0].faces)\n    {\n        aux = \"Pessoal! o \" + global.get(\"nome\") + \" \" + global.get(\"sobrenome\") + \" enviou imagem. Posso estar errada, mas parece ser \";\n        var tam = aux.length;\n        for(x = 0; x < msg.result.images[0].faces.length; x++)\n        {\n            \n            if(aux.length > tam)\n            {\n                aux += \"E \";\n            }\n        \n            if(msg.result.images[0].faces[x].age.min >= 55 && msg.result.images[0].faces[x].gender.gender == \"MALE\")\n            {\n                aux += \"um senhor com idade acima de \" + msg.result.images[0].faces[x].age.min;\n            } else if(msg.result.images[0].faces[x].age.min >= 45 && msg.result.images[0].faces[x].gender.gender == \"MALE\")\n            {\n                aux += \"um jovem senhor com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            } else if(msg.result.images[0].faces[x].age.min >= 35 && msg.result.images[0].faces[x].gender.gender == \"MALE\")\n            {\n                aux += \"um homem com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            } else if(msg.result.images[0].faces[x].age.min >= 25 && msg.result.images[0].faces[x].gender.gender == \"MALE\")\n            {\n                aux += \"um rapaz com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            } else if(msg.result.images[0].faces[x].age.min >= 15 && msg.result.images[0].faces[x].gender.gender == \"MALE\")\n            {\n                aux += \"um jovem com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            }\n        \n            if(msg.result.images[0].faces[x].age.min >= 55 && msg.result.images[0].faces[x].gender.gender == \"FEMALE\")\n            {\n                aux += \"uma senhora com idade superior à \" + msg.result.images[0].faces[x].age.min;\n            } else if(msg.result.images[0].faces[x].age.min >= 45 && msg.result.images[0].faces[x].gender.gender == \"FEMALE\")\n            {\n                aux += \"uma jovem senhora com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            } else if(msg.result.images[0].faces[x].age.min >= 35 && msg.result.images[0].faces[x].gender.gender == \"FEMALE\")\n            {\n                aux += \"uma mulher com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            } else if(msg.result.images[0].faces[x].age.min >= 25 && msg.result.images[0].faces[x].gender.gender == \"FEMALE\")\n            {\n                aux += \"uma garota com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            } else if(msg.result.images[0].faces[x].age.min >= 15 && msg.result.images[0].faces[x].gender.gender == \"FEMALE\")\n            {\n                aux += \"uma jovem com idade entre \" + msg.result.images[0].faces[x].age.min +\n                              \" e \" + msg.result.images[0].faces[x].age.max;\n            }\n    \n            aux += \" anos.\\n\";\n    //        msg.payload += \" anos.\";\n              \n            if(msg.result.images[0].faces[x].identity)\n            {\n                aux += \" Parece-me ser \" + msg.result.images[0].faces[x].identity.name+ \"!\\n\"\n            }\n        }\n        msg.payload = aux;\n    }\n    else\n    {\n            msg.payload = global.get(\"nome\") + \" \" + global.get(\"sobrenome\") + \" enviou imagem. Desculpe-me, mas não reconheci um rosto nesta imagem\";\n    }\n    \n}\nelse\n{\n    msg.payload = \"Desculpe-me, mas não reconheci um rosto nesta imagem\";\n    \n}\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 1070,
+      "y": 80,
+      "wires": [
+        [
+          "4ece5fc3.67bd5",
+          "6cd76cc4.8b8934"
+        ]
+      ]
+    },
+    {
+      "id": "4033fc55.d7bf24",
+      "type": "debug",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "active": false,
+      "console": "false",
+      "complete": "true",
+      "x": 1050,
+      "y": 580,
+      "wires": []
+    },
+    {
+      "id": "4ece5fc3.67bd5",
+      "type": "watson-text-to-speech",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "lang": "pt-BR",
+      "langhidden": "pt-BR",
+      "langcustom": "NoCustomisationSetting",
+      "langcustomhidden": "",
+      "voice": "pt-BR_IsabelaVoice",
+      "voicehidden": "",
+      "format": "audio/wav",
+      "password": "cZhdTYAKT0rG",
+      "apikey": "uiQku8OW9yEXJZGdH6RuSzPIuPO2AHpZc0sGfWkwjNLx",
+      "payload-response": true,
+      "default-endpoint": false,
+      "service-endpoint": "https://stream.watsonplatform.net/text-to-speech/api",
+      "x": 1100.2778015136719,
+      "y": 26.791664123535156,
+      "wires": [
+        [
+          "bf27bab0.3a9c58"
+        ]
+      ]
+    },
+    {
+      "id": "de79b881.e911e8",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "msg.payload = \"Aguarde...\";\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 545.2708892822266,
+      "y": 198.22222900390625,
+      "wires": [
+        [
+          "6cd76cc4.8b8934"
+        ]
+      ]
+    },
+    {
+      "id": "cc67e7cc.2bae48",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "/*\nmsg.params = {\"classifier_ids\":[\"DefaultCustomModel_2071836215\",\"default\"],\n           \"owners\":[\"IBM\",\"me\"],\n    \"accept_language\":\"pt-bt\"\n};\n*/\nmsg.params = {\"accept_language\":\"pt-bt\"};\n\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 470,
+      "y": 160,
+      "wires": [
+        [
+          "1a29e304.7b12ad"
+        ]
+      ]
+    },
+    {
+      "id": "5d46a6de.af33d8",
+      "type": "link out",
+      "z": "4afd9aca.e2c604",
+      "name": "Audio",
+      "links": [
+        "77d08b8f.ddc2c4"
+      ],
+      "x": 326.9000015258789,
+      "y": 444.8000030517578,
+      "wires": []
+    },
+    {
+      "id": "6391694b.8f7d68",
+      "type": "link in",
+      "z": "4afd9aca.e2c604",
+      "name": "p_Texto",
+      "links": [
+        "958d9a9e.603de8"
+      ],
+      "x": 55,
+      "y": 420,
+      "wires": [
+        [
+          "1294fc3e.678fc4"
+        ]
+      ]
+    },
+    {
+      "id": "648160c1.8c7d3",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "func": "//msg.res = global.get(\"resAux1\");\nif(global.get(\"audio\"))\n{\n    global.set(\"audio\",false);\n    return [msg,null];\n}\nelse\n    return [null,msg];\n",
+      "outputs": "2",
+      "noerr": 0,
+      "x": 1390,
+      "y": 420,
+      "wires": [
+        [
+          "8501d313.2ff5c"
+        ],
+        [
+          "64fa485b.f03318"
+        ]
+      ]
+    },
+    {
+      "id": "8501d313.2ff5c",
+      "type": "link out",
+      "z": "4afd9aca.e2c604",
+      "name": "p_AudioTTS",
+      "links": [
+        "9f48dd03.6e76c",
+        "d39c1715.797b98"
+      ],
+      "x": 1451.5,
+      "y": 625,
+      "wires": []
+    },
+    {
+      "id": "2c9a47d8.1a4788",
+      "type": "link in",
+      "z": "4afd9aca.e2c604",
+      "name": "Audio_TTS",
+      "links": [
+        "bd9b87cd.7b3228"
+      ],
+      "x": 1268.5,
+      "y": 748,
+      "wires": [
+        [
+          "64fa485b.f03318"
+        ]
+      ]
+    },
+    {
+      "id": "84f347b9.0d68a8",
+      "type": "function",
+      "z": "4afd9aca.e2c604",
+      "name": "Recebe parametros",
+      "func": "msg.payload = msg.req.query.mensagem;\nmsg.user = msg.req.query.usuario;\nglobal.set(\"usuario\",msg.req.query.usuario);\n//global.set(\"resAux1\",msg.res);\nglobal.set(\"nome\",msg.req.query.nome);\nglobal.set(\"sobrenome\",msg.req.query.sobrenome);\nglobal.set(\"foto\",msg.req.query.foto);\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 150,
+      "y": 160,
+      "wires": [
+        [
+          "1294fc3e.678fc4"
+        ]
+      ]
+    },
+    {
+      "id": "24532166.399b6e",
+      "type": "ui_gauge",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "group": "88cfc329.48957",
+      "order": 0,
+      "width": 0,
+      "height": 0,
+      "gtype": "gage",
+      "title": "Interações",
+      "label": "Qtde",
+      "format": "{{value}}",
+      "min": 0,
+      "max": "100000",
+      "colors": [
+        "#00b500",
+        "#e6e600",
+        "#ca3838"
+      ],
+      "seg1": "",
+      "seg2": "",
+      "x": 830,
+      "y": 600,
+      "wires": []
+    },
+    {
+      "id": "56a61a6f.a0ec04",
+      "type": "ui_text",
+      "z": "4afd9aca.e2c604",
+      "group": "88cfc329.48957",
+      "order": 0,
+      "width": 0,
+      "height": 0,
+      "name": "",
+      "label": "Último usuário",
+      "format": "{{msg.payload}}",
+      "layout": "row-spread",
+      "x": 820,
+      "y": 680,
+      "wires": []
+    },
+    {
+      "id": "affcb84e.f1d778",
+      "type": "ui_template",
+      "z": "4afd9aca.e2c604",
+      "group": "88cfc329.48957",
+      "name": "",
+      "order": 0,
+      "width": 0,
+      "height": 0,
+      "format": "<html><body>Hello World: <iframe src=\"{{msg.payload}}\"></iframe></body></html>",
+      "storeOutMessages": true,
+      "fwdInMessages": true,
+      "templateScope": "local",
+      "x": 850.7222290039062,
+      "y": 830.5139465332031,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "d1add73.5f37328",
+      "type": "ui_template",
+      "z": "4afd9aca.e2c604",
+      "group": "88cfc329.48957",
+      "name": "",
+      "order": 0,
+      "width": "6",
+      "height": "7",
+      "format": "<div ng-bind-html=\"msg.erro\"></div>\n<div ng-bind-html=\"msg.origem_id\"></div>\n<div ng-bind-html=\"msg.origem_tipo\"></div>\n<div ng-bind-html=\"msg.origem_nome\"></div>\n<div ng-bind-html=\"msg.datahora\"></div>",
+      "storeOutMessages": true,
+      "fwdInMessages": true,
+      "templateScope": "local",
+      "x": 539.2777862548828,
+      "y": 712.7326927185059,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "7f597e34.9d8d5",
+      "type": "ui_template",
+      "z": "4afd9aca.e2c604",
+      "group": "88cfc329.48957",
+      "name": "ChatBot",
+      "order": 0,
+      "width": "6",
+      "height": "5",
+      "format": "<img src=\"{{msg.payload}}\" alt=\"usuario\" style=\"width:304px;height:228px;\">",
+      "storeOutMessages": true,
+      "fwdInMessages": true,
+      "templateScope": "local",
+      "x": 460,
+      "y": 40,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "6cd76cc4.8b8934",
+      "type": "ui_template",
+      "z": "4afd9aca.e2c604",
+      "group": "88cfc329.48957",
+      "name": "ChatBot",
+      "order": 0,
+      "width": 0,
+      "height": 0,
+      "format": "<div ng-bind-html=\"msg.payload\"></div>",
+      "storeOutMessages": true,
+      "fwdInMessages": true,
+      "templateScope": "local",
+      "x": 1320,
+      "y": 120,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "bf27bab0.3a9c58",
+      "type": "play audio",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "voice": "",
+      "x": 1270.2709503173828,
+      "y": 54.28125,
+      "wires": []
+    },
+    {
+      "id": "77d08b8f.ddc2c4",
+      "type": "link in",
+      "z": "8e25657a.89e248",
+      "name": "p_Audio",
+      "links": [
+        "5d46a6de.af33d8"
+      ],
+      "x": 155,
+      "y": 60,
+      "wires": [
+        [
+          "1d77fa8f.3ac365"
+        ]
+      ]
+    },
+    {
+      "id": "5f46bfb2.65c2f",
+      "type": "watson-speech-to-text",
+      "z": "8e25657a.89e248",
+      "name": "",
+      "alternatives": "",
+      "speakerlabels": false,
+      "smartformatting": false,
+      "lang": "pt-BR",
+      "langhidden": "pt-BR",
+      "langcustom": "NoCustomisationSetting",
+      "langcustomhidden": "",
+      "custom-weight": "",
+      "band": "NarrowbandModel",
+      "bandhidden": "NarrowbandModel",
+      "keywords": "",
+      "keywords-threshold": "",
+      "word-confidence": false,
+      "password": "",
+      "apikey": "KP4Vz-QBEU-74FOey_Fr81MUic9OiF1uLr3xm9Ic9Rsj",
+      "payload-response": true,
+      "streaming-mode": false,
+      "streaming-mute": false,
+      "auto-connect": false,
+      "discard-listening": false,
+      "disable-precheck": false,
+      "default-endpoint": false,
+      "service-endpoint": "https://stream.watsonplatform.net/speech-to-text/api",
+      "x": 500,
+      "y": 60,
+      "wires": [
+        [
+          "958d9a9e.603de8"
+        ]
+      ]
+    },
+    {
+      "id": "958d9a9e.603de8",
+      "type": "link out",
+      "z": "8e25657a.89e248",
+      "name": "texto",
+      "links": [
+        "6391694b.8f7d68"
+      ],
+      "x": 635,
+      "y": 60,
+      "wires": []
+    },
+    {
+      "id": "59e3304b.f0945",
+      "type": "function",
+      "z": "8e25657a.89e248",
+      "name": "",
+      "func": "msg.payload = msg.payload[0].text;\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 250,
+      "y": 160,
+      "wires": [
+        [
+          "ac5f39ae.d9ea88"
+        ]
+      ]
+    },
+    {
+      "id": "ac5f39ae.d9ea88",
+      "type": "watson-text-to-speech",
+      "z": "8e25657a.89e248",
+      "name": "",
+      "lang": "pt-BR",
+      "langhidden": "pt-BR",
+      "langcustom": "NoCustomisationSetting",
+      "langcustomhidden": "NoCustomisationSetting",
+      "voice": "pt-BR_IsabelaVoice",
+      "voicehidden": "",
+      "format": "audio/wav",
+      "password": "",
+      "apikey": "nc60lPy0_5ldxD1DOBf2BwuOG_WPxoOwQ1lYl-llrbmo",
+      "payload-response": true,
+      "default-endpoint": false,
+      "service-endpoint": "https://stream.watsonplatform.net/text-to-speech/api",
+      "x": 410.0716094970703,
+      "y": 160.67859363555908,
+      "wires": [
+        [
+          "998bec6b.a987d"
+        ]
+      ]
+    },
+    {
+      "id": "998bec6b.a987d",
+      "type": "function",
+      "z": "8e25657a.89e248",
+      "name": "",
+      "func": "global.set(\"idAudio\",0);\nglobal.set(\"idAudio\", Math.floor((Math.random() * 100000000000) + 1));\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 568.9127807617188,
+      "y": 160.50398778915405,
+      "wires": [
+        [
+          "2adabde0.adfb62"
+        ]
+      ]
+    },
+    {
+      "id": "ee1986c5.002c88",
+      "type": "function",
+      "z": "8e25657a.89e248",
+      "name": "",
+      "func": "var url = \"https://\" + msg.req.headers.host;\n\nif(!global.get(\"speech\"))\n{\n    global.set(\"speech\",[]);\n    global.set(\"speech[0]\",{_id:global.get(\"idAudio\").toString(),speech:msg.payload});\n}\nelse\n{\n    var pos;\n    pos = global.get(\"speech\").length;\n    global.set(\"speech[\" + pos + \"]\",{_id:global.get(\"idAudio\").toString(),speech:msg.payload});\n}\n\nmsg.payload = [{\"attachment\":{\n    \"type\":\"audio\",\n    \"payload\":{\"url\":url+ \"/facebook/resposta?audioid=\"+global.get(\"idAudio\").toString()}\n    }\n}];\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 384.24999237060547,
+      "y": 320.89286518096924,
+      "wires": [
+        [
+          "bd9b87cd.7b3228"
+        ]
+      ]
+    },
+    {
+      "id": "3c1f0636.5484ea",
+      "type": "http in",
+      "z": "8e25657a.89e248",
+      "name": "",
+      "url": "/facebook/resposta",
+      "method": "get",
+      "upload": false,
+      "swaggerDoc": "",
+      "x": 230,
+      "y": 420,
+      "wires": [
+        [
+          "19af312b.5d0d6f"
+        ]
+      ]
+    },
+    {
+      "id": "fe598558.886328",
+      "type": "http response",
+      "z": "8e25657a.89e248",
+      "name": "",
+      "statusCode": "",
+      "headers": {
+        "content-type": "audio/mpeg3"
+      },
+      "x": 751.0000038146973,
+      "y": 420.42852687835693,
+      "wires": []
+    },
+    {
+      "id": "19af312b.5d0d6f",
+      "type": "change",
+      "z": "8e25657a.89e248",
+      "name": "",
+      "rules": [
+        {
+          "t": "set",
+          "p": "payload",
+          "pt": "msg",
+          "to": "req.query.audioid",
+          "tot": "msg"
+        }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 451.7142639160156,
+      "y": 420.07142543792725,
+      "wires": [
+        [
+          "7c0008b6.075258"
+        ]
+      ]
+    },
+    {
+      "id": "7c0008b6.075258",
+      "type": "function",
+      "z": "8e25657a.89e248",
+      "name": "",
+      "func": "for(var k in global.get(\"speech\")) {\n  if (global.get(\"speech\")[k]._id == msg.payload) \n    {\n      msg.payload = global.get(\"speech\")[k].speech;\n// Delete an item\n      global.get(\"speech\").splice(k,1);\n      break;\n    } \n  }\nreturn msg;\n\n//msg.payload = Buffer.from(msg.payload.audio, 'utf8');\n//return msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 615.1190567016602,
+      "y": 420.4285430908203,
+      "wires": [
+        [
+          "fe598558.886328"
+        ]
+      ]
+    },
+    {
+      "id": "d39c1715.797b98",
+      "type": "link in",
+      "z": "8e25657a.89e248",
+      "name": "Texto_TTS",
+      "links": [
+        "8501d313.2ff5c"
+      ],
+      "x": 155,
+      "y": 160,
+      "wires": [
+        [
+          "59e3304b.f0945"
+        ]
+      ]
+    },
+    {
+      "id": "bd9b87cd.7b3228",
+      "type": "link out",
+      "z": "8e25657a.89e248",
+      "name": "Audio",
+      "links": [
+        "a88b3b2d.231178",
+        "2c9a47d8.1a4788"
+      ],
+      "x": 522.5,
+      "y": 321,
+      "wires": []
+    },
+    {
+      "id": "1d77fa8f.3ac365",
+      "type": "ffmpeg-conversion",
+      "z": "8e25657a.89e248",
+      "name": "",
+      "format": "wav",
+      "audiochannels": "stereo",
+      "x": 310.49721908569336,
+      "y": 59.599985122680664,
+      "wires": [
+        [
+          "5f46bfb2.65c2f"
+        ]
+      ]
+    },
+    {
+      "id": "2adabde0.adfb62",
+      "type": "ffmpeg-conversion",
+      "z": "8e25657a.89e248",
+      "name": "",
+      "format": "mp3",
+      "audiochannels": "mono",
+      "x": 730.8056221008301,
+      "y": 160.0039987564087,
+      "wires": [
+        [
+          "ee1986c5.002c88"
+        ]
+      ]
+    },
+    {
+      "id": "25c55ada.1a30a6",
+      "type": "function",
+      "z": "e64f58b3.568258",
+      "name": "",
+      "func": "//context.global.endereco = context.global.endereco || \"\";\nglobal.set(\"endereço\",\"\");\n//context.global.retorno = msg.location.address;\nglobal.set(\"retorno\",msg.location.address);\nif(global.get(\"retorno\") !== \"Feriado\" && global.get(\"retorno\") !== \"Nenhum Local\")\n{\n    return [null,msg];\n}\nelse\n{\n    msg.payload = global.get(\"retorno\");\n    //context.global.endereco = \"\";\n    global.set(\"endereco\",\"\");\n}\nreturn [msg,null];",
+      "outputs": "2",
+      "noerr": 0,
+      "x": 710,
+      "y": 80,
+      "wires": [
+        [
+          "1c811074.46f04"
+        ],
+        [
+          "51b0575c.2a1cb8"
+        ]
+      ]
+    },
+    {
+      "id": "a4361edb.f5b27",
+      "type": "change",
+      "z": "e64f58b3.568258",
+      "name": "",
+      "rules": [
+        {
+          "t": "set",
+          "p": "location.address",
+          "pt": "msg",
+          "to": "payload",
+          "tot": "msg"
+        }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 490,
+      "y": 80,
+      "wires": [
+        [
+          "25c55ada.1a30a6"
+        ]
+      ]
+    },
+    {
+      "id": "bcca2376.bab6a",
+      "type": "function",
+      "z": "e64f58b3.568258",
+      "name": "",
+      "func": "if(msg.status == \"OK\")\n{\n    global.set(\"endereco\",msg.data.results[0].formatted_address) \n//    context.global.endereco = msg.data.results[0].formatted_address;\n    msg.payload = msg.payload.description;\n}\nelse\n{\n    msg.payload = \"Nenhum Local\";\n    global.set(\"endereco\",\"\");\n//    context.global.endereco = \"\";\n}\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 730,
+      "y": 140,
+      "wires": [
+        [
+          "1c811074.46f04"
+        ]
+      ]
+    },
+    {
+      "id": "7f3b76e0.97e288",
+      "type": "function",
+      "z": "e64f58b3.568258",
+      "name": "",
+      "func": "msg.payload = msg.mensagem;\nif(msg.tipo == \"M\")\n{\n    msg.srclang = \"pt\"; \n    msg.destlang = \"en\";\n    return [msg,null,null];\n}\nelse if(msg.tipo == \"E\"){\n    return [null,msg,null];    \n}\nelse{\n    msg.location = {\"lat\":parseFloat(msg.lat),\n                    \"lon\":parseFloat(msg.lon)};\n    //msg.geocodeBy = \"Coordinates\";\n    return [null,null,msg];\n}\n",
+      "outputs": 3,
+      "noerr": 0,
+      "x": 250,
+      "y": 80,
+      "wires": [
+        [
+          "c78a1f59.9d5ca"
+        ],
+        [
+          "a4361edb.f5b27"
+        ],
+        [
+          "9cb40564.8454e8"
+        ]
+      ]
+    },
+    {
+      "id": "c78a1f59.9d5ca",
+      "type": "natural-language-understanding",
+      "z": "e64f58b3.568258",
+      "name": "NLU",
+      "categories": false,
+      "limitcategories": "",
+      "concepts": false,
+      "maxconcepts": "8",
+      "doc-emotion": false,
+      "doc-emotion-target": "",
+      "doc-sentiment": false,
+      "doc-sentiment-target": "",
+      "entity": true,
+      "entity-emotion": false,
+      "entity-sentiment": false,
+      "maxentities": "50",
+      "keyword": false,
+      "keyword-emotion": false,
+      "keyword-sentiment": false,
+      "maxkeywords": "50",
+      "metadata": false,
+      "relation": false,
+      "semantic": false,
+      "semantic-entities": false,
+      "semantic-keywords": false,
+      "maxsemantics": "50",
+      "limittextcharacters": "",
+      "syntax": false,
+      "syntax-sentences": false,
+      "syntax-tokens-lemma": false,
+      "syntax-tokens-pos": false,
+      "default-endpoint": false,
+      "service-endpoint": "https://gateway.watsonplatform.net/natural-language-understanding/api",
+      "x": 450,
+      "y": 40,
+      "wires": [
+        [
+          "95e8e95d.0a0498",
+          "f90741a5.d421b"
+        ]
+      ]
+    },
+    {
+      "id": "95e8e95d.0a0498",
+      "type": "function",
+      "z": "e64f58b3.568258",
+      "name": "",
+      "func": "msg.payload = \"Nenhum Local\";\nif(msg.features.entities.length > 0)\n{\n    if(msg.features.entities[0].type == \"Location\" ||\n       msg.features.entities[0].type == \"Facility\")\n    {\n        msg.payload = msg.features.entities[0].text;\n    }\n    if(msg.features.entities[0].type == \"Holiday\")\n    {\n        msg.payload = \"Holiday\";\n    }\n    \n}\nelse if(msg.features.relations)\n{\n    if(msg.features.relations.length > 0)\n    {\n        if(msg.features.relation[0].arguments.lebgth > 0)\n        {\n            msg.payloa = msg.features.relations[0].arguments[0].text;\n            msg.payload = vEndereco;\n        }\n    }\n}\nnode.log(msg.payload);\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 590,
+      "y": 40,
+      "wires": [
+        [
+          "a4361edb.f5b27"
+        ]
+      ]
+    },
+    {
+      "id": "bbc11bd6.4be978",
+      "type": "catch",
+      "z": "e64f58b3.568258",
+      "name": "Em caso de erro aqui...",
+      "scope": null,
+      "x": 440,
+      "y": 260,
+      "wires": [
+        [
+          "923e256.d859cd8"
+        ]
+      ]
+    },
+    {
+      "id": "923e256.d859cd8",
+      "type": "function",
+      "z": "e64f58b3.568258",
+      "name": "Trata erro",
+      "func": "if(msg.error.source.name)\n{\n    if(msg.error.source.name == \"NLU\")\n    {\n        msg.payload = \"Nenhum Local\";\n        return msg;\n    }\n}\nmsg.payload = \"Error\";\n//context.global.endereco = \"\";\nglobal.set(\"endereco\",\"\");\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 720,
+      "y": 260,
+      "wires": [
+        [
+          "1c811074.46f04"
+        ]
+      ]
+    },
+    {
+      "id": "51b0575c.2a1cb8",
+      "type": "google geocoding",
+      "z": "e64f58b3.568258",
+      "name": "",
+      "geocodeBy": "address",
+      "address": "",
+      "lat": "",
+      "lon": "",
+      "googleAPI": "58c1901d.4bb22",
+      "bounds": "",
+      "language": "pt-BR",
+      "region": "",
+      "components": "",
+      "x": 520,
+      "y": 140,
+      "wires": [
+        [
+          "bcca2376.bab6a",
+          "f90741a5.d421b"
+        ]
+      ]
+    },
+    {
+      "id": "20d06911.8f0626",
+      "type": "function",
+      "z": "798e580f.6f9248",
+      "name": "",
+      "func": "if(msg.payload.location)\n{\n\n    var d = new Date(msg.payload.location.timeStamp);\n    var vLat = msg.payload.location.latitude;\n    var vLon = msg.payload.location.longitude;\n\n    var d = new Date(msg.payload.location.timeStamp);\n    d = d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear() + \" - \" + \n    d.toLocaleTimeString('pt-BR'); //d.getHours()+\":\"+d.getMinutes()+ \":\"+d.getSeconds();\n\n    msg =\n    {\"payload\":vLat+\",\"+vLon, /* Para o serviço de Weather Channel */\n     \"location\":{\"lat\":vLat,\"lon\":vLon}, /* Para o serviço do Google Maps */\n     \"quando\":d\n    };\n\n    return msg;\n    \n}\nreturn null;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 672.2500038146973,
+      "y": 75.25000286102295,
+      "wires": [
+        [
+          "ce6d4fdc.06ae9",
+          "6807689d.63ced8"
+        ]
+      ]
+    },
+    {
+      "id": "ce6d4fdc.06ae9",
+      "type": "google geocoding",
+      "z": "798e580f.6f9248",
+      "name": "",
+      "geocodeBy": "coordinates",
+      "address": "",
+      "lat": "",
+      "lon": "",
+      "googleAPI": "58c1901d.4bb22",
+      "bounds": "",
+      "language": "pt-BR",
+      "region": "",
+      "components": "",
+      "x": 208.5,
+      "y": 184.25000381469727,
+      "wires": [
+        [
+          "b257b5f7.a06c88"
+        ]
+      ]
+    },
+    {
+      "id": "b257b5f7.a06c88",
+      "type": "function",
+      "z": "798e580f.6f9248",
+      "name": "",
+      "func": "msg.payload = msg.payload.address + \". Último status: \" + msg.quando;\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 393.00000762939453,
+      "y": 184.25000286102295,
+      "wires": [
+        [
+          "f8592656.fc8988"
+        ]
+      ]
+    },
+    {
+      "id": "476746e9.834e58",
+      "type": "http response",
+      "z": "798e580f.6f9248",
+      "name": "",
+      "x": 770,
+      "y": 180,
+      "wires": []
+    },
+    {
+      "id": "54a53f7b.990d3",
+      "type": "http in",
+      "z": "798e580f.6f9248",
+      "name": "",
+      "url": "/ondeestameucelular",
+      "method": "get",
+      "swaggerDoc": "",
+      "x": 130,
+      "y": 100,
+      "wires": [
+        [
+          "ac379f39.24649"
+        ]
+      ]
+    },
+    {
+      "id": "ac379f39.24649",
+      "type": "change",
+      "z": "798e580f.6f9248",
+      "name": "",
+      "rules": [
+        {
+          "t": "set",
+          "p": "resAux",
+          "pt": "flow",
+          "to": "res",
+          "tot": "msg"
+        }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 340,
+      "y": 100,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "fe0e4670.beac28",
+      "type": "change",
+      "z": "798e580f.6f9248",
+      "name": "",
+      "rules": [
+        {
+          "t": "set",
+          "p": "res",
+          "pt": "msg",
+          "to": "resAux",
+          "tot": "flow"
+        }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 582.7500076293945,
+      "y": 184.25000381469727,
+      "wires": [
+        [
+          "476746e9.834e58"
+        ]
+      ]
+    },
+    {
+      "id": "1cf6524f.9edf5e",
+      "type": "catch",
+      "z": "798e580f.6f9248",
+      "name": "",
+      "scope": [
+        "54a53f7b.990d3"
+      ],
+      "x": 143.25000762939453,
+      "y": 236.50000381469727,
+      "wires": [
+        [
+          "429ee290.c3760c",
+          "6807689d.63ced8"
+        ]
+      ]
+    },
+    {
+      "id": "429ee290.c3760c",
+      "type": "function",
+      "z": "798e580f.6f9248",
+      "name": "",
+      "func": "msg.payload = \"Erro\";\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 433.50000762939453,
+      "y": 236.50000381469727,
+      "wires": [
+        [
+          "f8592656.fc8988"
+        ]
+      ]
+    },
+    {
+      "id": "6be4ee6e.9a0d1",
+      "type": "find-my-iphone",
+      "z": "798e580f.6f9248",
+      "devicename": "",
+      "x": 523.5,
+      "y": 77,
+      "wires": [
+        [
+          "20d06911.8f0626"
+        ]
+      ]
+    },
+    {
+      "id": "6807689d.63ced8",
+      "type": "debug",
+      "z": "798e580f.6f9248",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "x": 680,
+      "y": 140,
+      "wires": []
+    },
+    {
+      "id": "7ea9f6d.a50dd08",
+      "type": "http in",
+      "z": "103670b4.2baf8f",
+      "name": "",
+      "url": "/api/conversation",
+      "method": "post",
+      "upload": false,
+      "swaggerDoc": "",
+      "x": 140,
+      "y": 120,
+      "wires": [
+        [
+          "f3d53502.b2edb8"
+        ]
+      ]
+    },
+    {
+      "id": "c5c28de1.e6dfb",
+      "type": "http response",
+      "z": "103670b4.2baf8f",
+      "name": "",
+      "statusCode": "",
+      "headers": {},
+      "x": 790,
+      "y": 120,
+      "wires": []
+    },
+    {
+      "id": "3cd8cd0a.f17b02",
+      "type": "watson-conversation-v1",
+      "z": "103670b4.2baf8f",
+      "name": "",
+      "workspaceid": "1ce9bef8-2d1e-4209-94ca-54d55e6330b0",
+      "multiuser": false,
+      "context": true,
+      "default-endpoint": true,
+      "service-endpoint": "https://gateway.watsonplatform.net/conversation/api",
+      "x": 610,
+      "y": 120,
+      "wires": [
+        [
+          "c5c28de1.e6dfb"
+        ]
+      ]
+    },
+    {
+      "id": "f3d53502.b2edb8",
+      "type": "change",
+      "z": "103670b4.2baf8f",
+      "name": "",
+      "rules": [
+        {
+          "t": "set",
+          "p": "payload",
+          "pt": "msg",
+          "to": "payload.params.input.text",
+          "tot": "msg"
+        }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 390,
+      "y": 120,
+      "wires": [
+        [
+          "3cd8cd0a.f17b02"
+        ]
+      ]
+    },
+    {
+      "id": "949fc03a.c772f",
+      "type": "comment",
+      "z": "103670b4.2baf8f",
+      "name": "Exemplo para usar com o chatbot-ultmate. ",
+      "info": "Código esta em https://github.com/sergiogama/Ultimate-ChatBot\n",
+      "x": 202.5234375,
+      "y": 60.765625,
+      "wires": []
+    },
+    {
+      "id": "f34660fe.5470f",
+      "type": "http in",
+      "z": "48c59ec5.35c73",
+      "name": "https://chatbot-backend.mybluemix.net/politicadeprivacidade",
+      "url": "/politicadeprivacidade",
+      "method": "get",
+      "swaggerDoc": "",
+      "x": 281.765625,
+      "y": 75,
+      "wires": [
+        [
+          "68c9125c.7d1a8c"
+        ]
+      ]
+    },
+    {
+      "id": "68c9125c.7d1a8c",
+      "type": "template",
+      "z": "48c59ec5.35c73",
+      "name": "",
+      "field": "payload",
+      "fieldType": "msg",
+      "format": "handlebars",
+      "syntax": "mustache",
+      "template": "This is a public page and there is no privacy!",
+      "x": 602.7656364440918,
+      "y": 75.00000095367432,
+      "wires": [
+        [
+          "53559fc1.43768"
+        ]
+      ]
+    },
+    {
+      "id": "53559fc1.43768",
+      "type": "http response",
+      "z": "48c59ec5.35c73",
+      "name": "",
+      "x": 769.7656364440918,
+      "y": 75.00000095367432,
+      "wires": []
+    },
+    {
+      "id": "45629ca7.9517c4",
+      "type": "debug",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "x": 770,
+      "y": 100,
+      "wires": []
+    },
+    {
+      "id": "23717e63.4256a2",
+      "type": "split",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "splt": "\\n",
+      "spltType": "str",
+      "arraySplt": 1,
+      "arraySpltType": "len",
+      "stream": false,
+      "addname": "chave",
+      "x": 310,
+      "y": 100,
+      "wires": [
+        [
+          "75feca09.7e2df4"
+        ]
+      ]
+    },
+    {
+      "id": "f0834ca9.43287",
+      "type": "change",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "rules": [
+        {
+          "t": "set",
+          "p": "payload",
+          "pt": "msg",
+          "to": "req.query.mensagem",
+          "tot": "msg"
+        }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 140,
+      "y": 100,
+      "wires": [
+        [
+          "23717e63.4256a2"
+        ]
+      ]
+    },
+    {
+      "id": "75feca09.7e2df4",
+      "type": "change",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "rules": [
+        {
+          "t": "set",
+          "p": "req.query.mensagem",
+          "pt": "msg",
+          "to": "payload",
+          "tot": "msg"
+        }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 510,
+      "y": 100,
+      "wires": [
+        [
+          "45629ca7.9517c4",
+          "84f347b9.0d68a8"
+        ]
+      ]
+    },
+    {
+      "id": "f3080307.3c459",
+      "type": "debug",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "active": false,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 410,
+      "y": 620,
+      "wires": []
+    },
+    {
+      "id": "e0479fa4.98a3f",
+      "type": "watson-assistant-v2",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "default-endpoint": true,
+      "service-endpoint": "https://gateway.watsonplatform.net/assistant/api",
+      "assistant_id": "7d065103-c3a9-4ffe-9b07-62c8d75e7bba",
+      "debug": false,
+      "restart": false,
+      "return_context": true,
+      "alternate_intents": false,
+      "multisession": true,
+      "timeout": "",
+      "optout-learning": false,
+      "x": 550,
+      "y": 320,
+      "wires": [
+        [
+          "340d4413.1271ec",
+          "1189028f.bca3bd",
+          "f3080307.3c459"
+        ]
+      ]
+    },
+    {
+      "id": "fcd4d807.b530e8",
+      "type": "link out",
+      "z": "4afd9aca.e2c604",
+      "name": "localizacao_call",
+      "links": [
+        "349b1087.11a36"
+      ],
+      "x": 555,
+      "y": 360,
+      "wires": []
+    },
+    {
+      "id": "349b1087.11a36",
+      "type": "link in",
+      "z": "e64f58b3.568258",
+      "name": "localizacao_in",
+      "links": [
+        "fcd4d807.b530e8"
+      ],
+      "x": 135,
+      "y": 80,
+      "wires": [
+        [
+          "7f3b76e0.97e288"
+        ]
+      ]
+    },
+    {
+      "id": "1c811074.46f04",
+      "type": "link out",
+      "z": "e64f58b3.568258",
+      "name": "localizacao_out",
+      "links": [
+        "442c36d1.b6d0b8"
+      ],
+      "x": 915,
+      "y": 140,
+      "wires": []
+    },
+    {
+      "id": "442c36d1.b6d0b8",
+      "type": "link in",
+      "z": "4afd9aca.e2c604",
+      "name": "localizacao_result",
+      "links": [
+        "1c811074.46f04"
+      ],
+      "x": 615,
+      "y": 420,
+      "wires": [
+        [
+          "44bffddf.2c7e64",
+          "4033fc55.d7bf24"
+        ]
+      ]
+    },
+    {
+      "id": "9cb40564.8454e8",
+      "type": "google geocoding",
+      "z": "e64f58b3.568258",
+      "name": "",
+      "geocodeBy": "coordinates",
+      "address": "",
+      "lat": "",
+      "lon": "",
+      "googleAPI": "58c1901d.4bb22",
+      "bounds": "",
+      "language": "pt-BR",
+      "region": "",
+      "components": "",
+      "x": 530,
+      "y": 180,
+      "wires": [
+        [
+          "bcca2376.bab6a",
+          "f90741a5.d421b"
+        ]
+      ]
+    },
+    {
+      "id": "2472f6d6.de0bea",
+      "type": "link in",
+      "z": "798e580f.6f9248",
+      "name": "find_iphone_in",
+      "links": [
+        "11c0affb.4f446"
+      ],
+      "x": 120,
+      "y": 40,
+      "wires": [
+        [
+          "6be4ee6e.9a0d1"
+        ]
+      ]
+    },
+    {
+      "id": "f8592656.fc8988",
+      "type": "link out",
+      "z": "798e580f.6f9248",
+      "name": "find_iphone_out",
+      "links": [
+        "1d64d3b.bcc052c"
+      ],
+      "x": 700,
+      "y": 260,
+      "wires": []
+    },
+    {
+      "id": "11c0affb.4f446",
+      "type": "link out",
+      "z": "4afd9aca.e2c604",
+      "name": "find_iphone_call",
+      "links": [
+        "2472f6d6.de0bea"
+      ],
+      "x": 880,
+      "y": 480,
+      "wires": []
+    },
+    {
+      "id": "1d64d3b.bcc052c",
+      "type": "link in",
+      "z": "4afd9aca.e2c604",
+      "name": "find_iphone_result",
+      "links": [
+        "f8592656.fc8988"
+      ],
+      "x": 915,
+      "y": 520,
+      "wires": [
+        [
+          "1fe458be.31cf37"
+        ]
+      ]
+    },
+    {
+      "id": "67139160.ac861",
+      "type": "inject",
+      "z": "798e580f.6f9248",
+      "name": "",
+      "topic": "",
+      "payload": "",
+      "payloadType": "date",
+      "repeat": "",
+      "crontab": "",
+      "once": false,
+      "onceDelay": 0.1,
+      "x": 120,
+      "y": 340,
+      "wires": [
+        [
+          "6be4ee6e.9a0d1"
+        ]
+      ]
+    },
+    {
+      "id": "cb01ad21.977b3",
+      "type": "debug",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "active": false,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "false",
+      "x": 1240,
+      "y": 680,
+      "wires": []
+    },
+    {
+      "id": "bf4c9e15.59d77",
+      "type": "debug",
+      "z": "4afd9aca.e2c604",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 1380,
+      "y": 220,
+      "wires": []
+    },
+    {
+      "id": "ca06a3ea.22d9",
+      "type": "watson-language-translator-identify",
+      "z": "dab81674.50b548",
+      "name": "Identify language",
+      "default-endpoint": false,
+      "service-endpoint": "https://gateway.watsonplatform.net/language-translator/api",
+      "x": 490,
+      "y": 40,
+      "wires": [
+        [
+          "5139c542.a1219c"
+        ]
+      ]
+    },
+    {
+      "id": "5139c542.a1219c",
+      "type": "function",
+      "z": "dab81674.50b548",
+      "name": "What language?",
+      "func": "flow.set(\"idioma\",\"pt\");\n\nif(msg.lang.confidence > 0.7)\n{\n    flow.set(\"idioma\",msg.lang.language);\n    if(flow.get(\"idioma\") == \"en\")\n    {\n        msg.srclang = flow.get(\"idioma\");\n        msg.destlang = \"pt\";\n        return [null,msg,null];\n    }\n    else if(flow.get(\"idioma\") != \"pt\" && \n            //flow.get(\"idioma\") != \"it\" &&\n            flow.get(\"idioma\") != \"hu\") \n    {\n        return [null,null,msg];\n    }\nelse\n    {\n        flow.set(\"idioma\",\"pt\");\n    }\n}\nreturn [msg,null,null];    \n",
+      "outputs": "3",
+      "noerr": 0,
+      "x": 180,
+      "y": 180,
+      "wires": [
+        [
+          "1e9dfeb4.fee341"
+        ],
+        [
+          "15aad91e.163997"
+        ],
+        [
+          "5306cf4f.b0ecd"
+        ]
+      ]
+    },
+    {
+      "id": "15aad91e.163997",
+      "type": "watson-translator",
+      "z": "dab81674.50b548",
+      "name": "Eng -> Port",
+      "action": "translate",
+      "basemodel": "ar-en",
+      "domain": "general",
+      "srclang": "en",
+      "destlang": "pt",
+      "password": "",
+      "apikey": "e9rWn1WlpldWcbXQ2pM_d-O7pBnozErS_xGgBGLAuPId",
+      "custom": "",
+      "domainhidden": "general",
+      "srclanghidden": "en",
+      "destlanghidden": "pt",
+      "basemodelhidden": "ar-en",
+      "customhidden": "",
+      "filetype": "forcedglossary",
+      "trainid": "",
+      "lgparams2": true,
+      "neural": false,
+      "default-endpoint": false,
+      "service-endpoint": "https://gateway.watsonplatform.net/language-translator/api",
+      "x": 430,
+      "y": 220,
+      "wires": [
+        [
+          "1e9dfeb4.fee341"
+        ]
+      ]
+    },
+    {
+      "id": "1e9dfeb4.fee341",
+      "type": "watson-assistant-v2",
+      "z": "dab81674.50b548",
+      "name": "",
+      "default-endpoint": true,
+      "service-endpoint": "https://gateway.watsonplatform.net/assistant/api/v2",
+      "assistant_id": "898f38be-fcb6-4784-b27d-2c670f465f66",
+      "debug": false,
+      "restart": false,
+      "return_context": true,
+      "alternate_intents": false,
+      "multisession": true,
+      "timeout": "",
+      "optout-learning": false,
+      "x": 550,
+      "y": 165,
+      "wires": [
+        [
+          "a15ad484.401998"
+        ]
+      ]
+    },
+    {
+      "id": "da62f01f.32b2a",
+      "type": "http in",
+      "z": "dab81674.50b548",
+      "name": "",
+      "url": "/chatml",
+      "method": "get",
+      "upload": false,
+      "swaggerDoc": "",
+      "x": 100,
+      "y": 40,
+      "wires": [
+        [
+          "c816fa4d.d69298"
+        ]
+      ]
+    },
+    {
+      "id": "c816fa4d.d69298",
+      "type": "change",
+      "z": "dab81674.50b548",
+      "name": "",
+      "rules": [
+        {
+          "t": "set",
+          "p": "payload",
+          "pt": "msg",
+          "to": "req.query.mensagem",
+          "tot": "msg"
+        }
+      ],
+      "action": "",
+      "property": "",
+      "from": "",
+      "to": "",
+      "reg": false,
+      "x": 300,
+      "y": 40,
+      "wires": [
+        [
+          "ca06a3ea.22d9"
+        ]
+      ]
+    },
+    {
+      "id": "4c5e55a6.404ddc",
+      "type": "watson-translator",
+      "z": "dab81674.50b548",
+      "name": "Port -> Eng",
+      "action": "translate",
+      "basemodel": "ar-en",
+      "domain": "general",
+      "srclang": "pt",
+      "destlang": "en",
+      "password": "",
+      "apikey": "e9rWn1WlpldWcbXQ2pM_d-O7pBnozErS_xGgBGLAuPId",
+      "custom": "",
+      "domainhidden": "general",
+      "srclanghidden": "pt",
+      "destlanghidden": "en",
+      "basemodelhidden": "ar-en",
+      "customhidden": "",
+      "filetype": "forcedglossary",
+      "trainid": "",
+      "lgparams2": true,
+      "neural": false,
+      "default-endpoint": false,
+      "service-endpoint": "https://gateway.watsonplatform.net/language-translator/api",
+      "x": 590,
+      "y": 280,
+      "wires": [
+        [
+          "55c1c176.0a5a7"
+        ]
+      ]
+    },
+    {
+      "id": "55c1c176.0a5a7",
+      "type": "function",
+      "z": "dab81674.50b548",
+      "name": "Answer",
+      "func": "if(flow.get(\"idioma\") == \"en\")\n{\n    return [msg,null];\n}\nelse\n{\n    msg.destlang = flow.get(\"idioma\");\n    msg.srclang = \"en\";\n    return [null,msg];\n}\n",
+      "outputs": 2,
+      "noerr": 0,
+      "x": 480,
+      "y": 360,
+      "wires": [
+        [
+          "80b9d12d.9709f"
+        ],
+        [
+          "e047a552.fd5d38"
+        ]
+      ]
+    },
+    {
+      "id": "80b9d12d.9709f",
+      "type": "http response",
+      "z": "dab81674.50b548",
+      "name": "",
+      "x": 830,
+      "y": 360,
+      "wires": []
+    },
+    {
+      "id": "a15ad484.401998",
+      "type": "function",
+      "z": "dab81674.50b548",
+      "name": "What language?",
+      "func": "if(flow.get(\"idioma\") != \"pt\")\n{\n    msg.destlang = \"en\";\n    msg.srclang = \"pt\";\n    msg.payload = msg.payload.output.generic[0].text;\n    return [null,msg];\n}\nelse\n{\n    msg.payload = msg.payload.output.generic[0].text;\n    return [msg,null];\n}",
+      "outputs": 2,
+      "noerr": 0,
+      "x": 731,
+      "y": 165,
+      "wires": [
+        [
+          "80b9d12d.9709f"
+        ],
+        [
+          "4c5e55a6.404ddc"
+        ]
+      ]
+    },
+    {
+      "id": "5306cf4f.b0ecd",
+      "type": "function",
+      "z": "dab81674.50b548",
+      "name": "",
+      "func": "msg.srclang = flow.get(\"idioma\");\nmsg.destlang = \"en\";\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 130,
+      "y": 280,
+      "wires": [
+        [
+          "af20a84e.1c84b8"
+        ]
+      ]
+    },
+    {
+      "id": "af20a84e.1c84b8",
+      "type": "watson-translator",
+      "z": "dab81674.50b548",
+      "name": "Any Lang -> Eng",
+      "action": "translate",
+      "basemodel": "ar-en",
+      "domain": "general",
+      "srclang": "en",
+      "destlang": "pt",
+      "password": "",
+      "apikey": "e9rWn1WlpldWcbXQ2pM_d-O7pBnozErS_xGgBGLAuPId",
+      "custom": "",
+      "domainhidden": "general",
+      "srclanghidden": "en",
+      "destlanghidden": "pt",
+      "basemodelhidden": "ar-en",
+      "customhidden": "",
+      "filetype": "forcedglossary",
+      "trainid": "",
+      "lgparams2": true,
+      "neural": false,
+      "default-endpoint": false,
+      "service-endpoint": "https://gateway.watsonplatform.net/language-translator/api",
+      "x": 250,
+      "y": 360,
+      "wires": [
+        [
+          "c38eb77d.d14fe8"
+        ]
+      ]
+    },
+    {
+      "id": "e047a552.fd5d38",
+      "type": "watson-translator",
+      "z": "dab81674.50b548",
+      "name": "Eng -> Any Lang",
+      "action": "translate",
+      "basemodel": "ar-en",
+      "domain": "general",
+      "srclang": "en",
+      "destlang": "pt",
+      "password": "",
+      "apikey": "e9rWn1WlpldWcbXQ2pM_d-O7pBnozErS_xGgBGLAuPId",
+      "custom": "",
+      "domainhidden": "general",
+      "srclanghidden": "en",
+      "destlanghidden": "pt",
+      "basemodelhidden": "ar-en",
+      "customhidden": "",
+      "filetype": "forcedglossary",
+      "trainid": "",
+      "lgparams2": true,
+      "neural": false,
+      "default-endpoint": false,
+      "service-endpoint": "https://gateway.watsonplatform.net/language-translator/api",
+      "x": 570,
+      "y": 440,
+      "wires": [
+        [
+          "80b9d12d.9709f"
+        ]
+      ]
+    },
+    {
+      "id": "c38eb77d.d14fe8",
+      "type": "function",
+      "z": "dab81674.50b548",
+      "name": "",
+      "func": "msg.srclang = \"en\";\nmsg.destlang = \"pt\";\nreturn msg;",
+      "outputs": 1,
+      "noerr": 0,
+      "x": 370,
+      "y": 280,
+      "wires": [
+        [
+          "15aad91e.163997"
+        ]
+      ]
+    },
+    {
+      "id": "eafae5ca.9f69f8",
+      "type": "comment",
+      "z": "4afd9aca.e2c604",
+      "name": "Watson Assistant Instance",
+      "info": "Watson Assistant (Conta: Sergio Gama)\n\nhttps://assistant-us-south.watsonplatform.net/us-south/crn:v1:bluemix:public:conversation:us-south:a~2Fc5da597177f1dea64bee43e34a6026de:6fb5b6cf-9cd1-404f-821c-164d2b8bd16c::/workspaces/0eee31ac-e937-4e1c-b15f-0f75d8dea6f3/build/entitiesx#user",
+      "x": 570,
+      "y": 280,
+      "wires": []
+    },
+    {
+      "id": "729b507f.ba01a",
+      "type": "comment",
+      "z": "4afd9aca.e2c604",
+      "name": "Node-red instance",
+      "info": "Node-red Instance\n\nhttps://cloud.ibm.com/apps/ef9e81fe-a873-4398-bca8-2f8702f21a78?paneId=overview&ace_config=%7B%22region%22%3A%22us-south%22%2C%22crn%22%3A%22crn%3Av1%3Abluemix%3Apublic%3Acf%3Aus-south%3As%2F9b405c36-3a04-4ba1-8391-2ef1a5e3ed71%3A%3Acf-application%3Aef9e81fe-a873-4398-bca8-2f8702f21a78%22%2C%22resource_id%22%3A%22ef9e81fe-a873-4398-bca8-2f8702f21a78%22%2C%22orgGuid%22%3A%22e610c9cc-0b94-4d4a-811f-bc26363b1026%22%2C%22spaceGuid%22%3A%229b405c36-3a04-4ba1-8391-2ef1a5e3ed71%22%2C%22redirect%22%3A%22https%3A%2F%2Fcloud.ibm.com%2Fresources%22%2C%22bluemixUIVersion%22%3A%22v6%22%7D&env_id=ibm:yp:us-south",
+      "x": 290,
+      "y": 40,
+      "wires": []
+    },
+    {
+      "id": "f90741a5.d421b",
+      "type": "debug",
+      "z": "e64f58b3.568258",
+      "name": "",
+      "active": true,
+      "tosidebar": true,
+      "console": false,
+      "tostatus": false,
+      "complete": "true",
+      "targetType": "full",
+      "x": 810,
+      "y": 40,
+      "wires": []
+    }
+  ]
