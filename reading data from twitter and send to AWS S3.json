@@ -1,0 +1,358 @@
+[
+    {
+        "id": "a2d9ce3b6565fb6f",
+        "type": "amazon s3 out",
+        "z": "32be9d0149233e38",
+        "aws": "",
+        "bucket": "gama-dataset",
+        "filename": "tweets.csv",
+        "localFilename": "./tweets.csv",
+        "region": "us-east-2",
+        "name": "",
+        "x": 710,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "1a54a93c8a24892e",
+        "type": "inject",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"text\":\"Hello World\",\"screen_name\":\"sergiorggama\"}",
+        "payloadType": "json",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "5d5f8cbad03e99fa"
+            ]
+        ]
+    },
+    {
+        "id": "5d5f8cbad03e99fa",
+        "type": "csv",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "sep": ";",
+        "hdrin": "",
+        "hdrout": "once",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "lang,text,name,screen_name, location,followers_count,friends_count, lat, lon, sentiment",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 710,
+        "y": 60,
+        "wires": [
+            [
+                "4d53cf49cdb48aa5"
+            ]
+        ]
+    },
+    {
+        "id": "4d53cf49cdb48aa5",
+        "type": "file",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "filename": "./tweets.csv",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 970,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ef6b154d2245a817",
+        "type": "inject",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "108000",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 480,
+        "wires": [
+            [
+                "a2d9ce3b6565fb6f"
+            ]
+        ]
+    },
+    {
+        "id": "7a2bd4b97a81e71c",
+        "type": "twitter in",
+        "z": "32be9d0149233e38",
+        "twitter": "",
+        "tags": "ukraine",
+        "user": "false",
+        "name": "",
+        "inputs": 0,
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "23a6b0ace0335f8e"
+            ]
+        ]
+    },
+    {
+        "id": "d2a9d05d28c41b17",
+        "type": "debug",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "16760837fe0bea2c",
+        "type": "function",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "func": "count = flow.get(\"count\") || 0;\ncount++;\nflow.set(\"count\",count);\nif(count<=1200 && \n   msg.lang && \n   msg.tweet.text && \n   msg.tweet.user.name && \n   msg.tweet.user.screen_name &&\n   msg.tweet.user.location &&\n   msg.tweet.user.followers_count &&\n   msg.tweet.user.friends_count &&\n   msg.payload.data &&\n   msg.payload.data.length > 0 &&\n   msg.payload.data[0].latitude &&\n   msg.payload.data[0].longitude && \n   msg.sentiment.score) \n{\n    node.status({fill:\"green\",shape:\"dot\",text:count});\n    msg.payload = {\"lang\":msg.lang,\n                   \"text\":msg.tweet.text.replace(/(\\r\\n|\\n|\\r)/gm,\"\"),\n                   \"name\":msg.tweet.user.name,\n                   \"screen_name\":msg.tweet.user.screen_name,\n                   \"location\":msg.tweet.user.location,\n                   \"followers_count\":msg.tweet.user.followers_count,\n                   \"friends_count\":msg.tweet.user.friends_count,\n                   \"lat\": msg.payload.data[0].latitude,\n                   \"lon\": msg.payload.data[0].longitude,\n                   \"sentiment\": msg.sentiment.score\n    };\n    return msg;\n}\n//node.status({fill:\"green\",shape:\"dot\",\" text\":\"tweet removed\"});\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "d2a9d05d28c41b17",
+                "5d5f8cbad03e99fa"
+            ]
+        ]
+    },
+    {
+        "id": "612b32d5eeecbcd9",
+        "type": "inject",
+        "z": "32be9d0149233e38",
+        "name": "Restart session",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 380,
+        "wires": [
+            [
+                "98c3eb529afadc0c",
+                "d36a1f5e1f89b9c8"
+            ]
+        ]
+    },
+    {
+        "id": "98c3eb529afadc0c",
+        "type": "function",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "func": "flow.set(\"count\",0);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d36a1f5e1f89b9c8",
+        "type": "exec",
+        "z": "32be9d0149233e38",
+        "command": "rm ./tweets.csv",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 500,
+        "y": 420,
+        "wires": [
+            [
+                "f3ce09d3b70eacad"
+            ],
+            [
+                "f3ce09d3b70eacad"
+            ],
+            [
+                "f3ce09d3b70eacad"
+            ]
+        ]
+    },
+    {
+        "id": "afdb20e570e98331",
+        "type": "http request",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 590,
+        "y": 300,
+        "wires": [
+            [
+                "a99607dde60a2b08"
+            ]
+        ]
+    },
+    {
+        "id": "88cdf107854d9e71",
+        "type": "inject",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "props": [
+            {
+                "p": "url",
+                "v": "http://api.positionstack.com/v1/forward?access_key=8edbbbd21b66f9f1b2231e51fa0b8883&query=Florianópolis,SC",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 300,
+        "wires": [
+            [
+                "afdb20e570e98331"
+            ]
+        ]
+    },
+    {
+        "id": "14dc4d94077808e1",
+        "type": "debug",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a99607dde60a2b08",
+        "type": "json",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 750,
+        "y": 220,
+        "wires": [
+            [
+                "14dc4d94077808e1",
+                "16760837fe0bea2c"
+            ]
+        ]
+    },
+    {
+        "id": "f3ce09d3b70eacad",
+        "type": "debug",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ba084fa2b0a3d7fe",
+        "type": "function",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "func": "if(msg.tweet.user.location)\n{\n    msg.url = 'http://api.positionstack.com/v1/forward?access_key=8edbbbd21b66f9f1b2231e51fa0b8883&query=' + msg.tweet.user.location;\n    return msg;\n}\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "afdb20e570e98331"
+            ]
+        ]
+    },
+    {
+        "id": "23a6b0ace0335f8e",
+        "type": "sentiment",
+        "z": "32be9d0149233e38",
+        "name": "",
+        "property": "payload",
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "ba084fa2b0a3d7fe"
+            ]
+        ]
+    }
+]
