@@ -1,0 +1,239 @@
+[
+    {
+        "id": "5bef7943fc965b2c",
+        "type": "mqtt in",
+        "z": "bbc71bec81c24c92",
+        "name": "",
+        "topic": "sensortag/data",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "49c187d1603822f6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 300,
+        "wires": [
+            [
+                "ca8033e48dd00f62",
+                "05a1cf62f5976385"
+            ]
+        ]
+    },
+    {
+        "id": "ca8033e48dd00f62",
+        "type": "debug",
+        "z": "bbc71bec81c24c92",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "3f557cab403d6224",
+        "type": "mqtt out",
+        "z": "bbc71bec81c24c92",
+        "name": "",
+        "topic": "sensortag/data",
+        "qos": "",
+        "retain": "",
+        "respTopic": "gama/sensortag/data",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "63bd99673052e825",
+        "x": 700,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "57907829beda5eef",
+        "type": "inject",
+        "z": "bbc71bec81c24c92",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"msg\":\"Hello World\"}",
+        "payloadType": "json",
+        "x": 220,
+        "y": 480,
+        "wires": [
+            [
+                "3f557cab403d6224"
+            ]
+        ]
+    },
+    {
+        "id": "05a1cf62f5976385",
+        "type": "AWS IotData",
+        "z": "bbc71bec81c24c92",
+        "aws": "cfcd7fefa6e8f8f7",
+        "operation": "Publish",
+        "thingName": "",
+        "topic": "gama/sensortag/data",
+        "payload": "",
+        "endPoint": "XXXatjh0ljyz4xs8-ats.iot.us-east-1.amazonaws.com",
+        "name": "XXXGama_ST",
+        "x": 640,
+        "y": 380,
+        "wires": [
+            [
+                "8e571dab39200767"
+            ],
+            [
+                "8ddd1ad9f391f04a"
+            ]
+        ]
+    },
+    {
+        "id": "8e571dab39200767",
+        "type": "debug",
+        "z": "bbc71bec81c24c92",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8ddd1ad9f391f04a",
+        "type": "debug",
+        "z": "bbc71bec81c24c92",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "eebaf4346fa8d909",
+        "type": "inject",
+        "z": "bbc71bec81c24c92",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"id\":\"Gama_ST\",\"Temp\":25.3}",
+        "payloadType": "str",
+        "x": 190,
+        "y": 360,
+        "wires": [
+            [
+                "05a1cf62f5976385"
+            ]
+        ]
+    },
+    {
+        "id": "49c187d1603822f6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "63bd99673052e825",
+        "type": "mqtt-broker",
+        "name": "Gama_ST",
+        "broker": "atjh0ljyz4xs8-ats.iot.us-east-1.amazonaws.com",
+        "port": "8883",
+        "tls": "5bf86cde60f1bee7",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cfcd7fefa6e8f8f7",
+        "type": "amazon config",
+        "name": "AWS",
+        "region": "us-east-1",
+        "proxyRequired": false,
+        "proxy": ""
+    },
+    {
+        "id": "5bf86cde60f1bee7",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "3ad8a78c1e42bf0a706c253c9cc34f9422cc619d4bfe493f1fdb0353862bfef7-certificate.pem.crt",
+        "keyname": "3ad8a78c1e42bf0a706c253c9cc34f9422cc619d4bfe493f1fdb0353862bfef7-private.pem.key",
+        "caname": "AmazonRootCA1 (1).pem",
+        "servername": "",
+        "verifyservercert": false,
+        "alpnprotocol": ""
+    }
+]
