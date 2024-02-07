@@ -1,0 +1,586 @@
+[
+    {
+        "id": "c61665b5.dc1d8",
+        "type": "comment",
+        "z": "8c07c84c901460eb",
+        "name": "Read.me",
+        "info": "1) Create a Watson Conversation on IBM Cloud (https://www.bluemix.net)\n2) Create a Telegram Bot:\n   Open web.telegram.org\n   find BotFather (contact)\n   send /newbot\n   Give a name for your bot (Botfather will ask it)\n   Give a user name for it, which should have in the end \"Bot\"\n   The BotFather will give you a token.\n3) Baixe o nó node-red-contrib-telegrambot\n   Configure o nó receiver com o token dado\n   pelo Botfather\n   ",
+        "x": 120,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3e0a95af.e5f08a",
+        "type": "function",
+        "z": "8c07c84c901460eb",
+        "name": "Obtem mensagem",
+        "func": "msg.payload = msg.telegram.content;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "f3d75d6899402a57"
+            ]
+        ]
+    },
+    {
+        "id": "24ebd36b.04d1e4",
+        "type": "watson-conversation-v1",
+        "z": "8c07c84c901460eb",
+        "name": "Watson Assistant",
+        "workspaceid": "26244031-2713-4977-86b4-dbb6dc3763b3",
+        "multiuser": false,
+        "context": true,
+        "empty-payload": false,
+        "service-endpoint": "https://api.us-south.assistant.watson.cloud.ibm.com/instances/81b32a79-de24-4f06-957b-f191bc7c1246",
+        "timeout": "",
+        "optout-learning": false,
+        "x": 850,
+        "y": 260,
+        "wires": [
+            [
+                "a6817c9855f6c4a6",
+                "043689058277f981"
+            ]
+        ]
+    },
+    {
+        "id": "10222f18.29e139",
+        "type": "function",
+        "z": "8c07c84c901460eb",
+        "name": "Not authorized user",
+        "func": "msg.payload.content = \"You're not authorized user\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 580,
+        "wires": [
+            [
+                "106e3553196519f9"
+            ]
+        ]
+    },
+    {
+        "id": "fe94e8a123af9817",
+        "type": "telegram receiver",
+        "z": "8c07c84c901460eb",
+        "name": "",
+        "bot": "802e8986a91412bf",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "154167cd2f04b0b1"
+            ],
+            [
+                "10222f18.29e139"
+            ]
+        ]
+    },
+    {
+        "id": "106e3553196519f9",
+        "type": "telegram sender",
+        "z": "8c07c84c901460eb",
+        "name": "",
+        "bot": "802e8986a91412bf",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 860,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f3d75d6899402a57",
+        "type": "watson-language-translator-identify",
+        "z": "8c07c84c901460eb",
+        "name": "",
+        "service-endpoint": "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/e0759a16-77f3-44c8-a30b-5348a4c9a54e",
+        "x": 390,
+        "y": 180,
+        "wires": [
+            [
+                "9fc9fa33a06fc9c2"
+            ]
+        ]
+    },
+    {
+        "id": "2848f6e5809c8456",
+        "type": "watson-translator",
+        "z": "8c07c84c901460eb",
+        "name": "",
+        "action": "translate",
+        "basemodel": "ar-en",
+        "domain": "general",
+        "srclang": "en",
+        "destlang": "pt",
+        "apikey": "O83UUiHvp4mbjTtTapzMiZ8b_7IW234oWr8tIe19P1yf",
+        "custom": "",
+        "domainhidden": "general",
+        "srclanghidden": "en",
+        "destlanghidden": "pt",
+        "basemodelhidden": "ar-en",
+        "customhidden": "",
+        "filetype": "forcedglossary",
+        "trainid": "",
+        "lgparams2": true,
+        "service-endpoint": "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/e0759a16-77f3-44c8-a30b-5348a4c9a54e",
+        "x": 550,
+        "y": 260,
+        "wires": [
+            [
+                "24ebd36b.04d1e4"
+            ]
+        ]
+    },
+    {
+        "id": "9fc9fa33a06fc9c2",
+        "type": "function",
+        "z": "8c07c84c901460eb",
+        "name": "Traduz?",
+        "func": "flow.set(\"language\", msg.lang.confidence > .3 ? msg.lang.language : flow.get(\"language\") || \"pt\");\nif (msg.lang.language == \"en\")\n    {\n        flow.set(\"language\",\"en\");\n        return [null, msg];\n    }\nreturn [msg,null];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 180,
+        "wires": [
+            [
+                "24ebd36b.04d1e4"
+            ],
+            [
+                "2848f6e5809c8456"
+            ]
+        ]
+    },
+    {
+        "id": "855d2d1224166199",
+        "type": "function",
+        "z": "8c07c84c901460eb",
+        "name": "Traduz?",
+        "func": "if(flow.get(\"language\") == \"en\") {\n    msg.payload = msg.payload.output.generic[0].text;\n    return [null,msg];\n}\nmsg.payload = msg.payload.output.generic[0].text;\nreturn [msg,null];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 380,
+        "wires": [
+            [
+                "b242e40d33b392b5"
+            ],
+            [
+                "a15c68b14274ea08"
+            ]
+        ]
+    },
+    {
+        "id": "a15c68b14274ea08",
+        "type": "watson-translator",
+        "z": "8c07c84c901460eb",
+        "name": "",
+        "action": "translate",
+        "basemodel": "ar-en",
+        "domain": "general",
+        "srclang": "pt",
+        "destlang": "en",
+        "apikey": "O83UUiHvp4mbjTtTapzMiZ8b_7IW234oWr8tIe19P1yf",
+        "custom": "",
+        "domainhidden": "general",
+        "srclanghidden": "pt",
+        "destlanghidden": "en",
+        "basemodelhidden": "ar-en",
+        "customhidden": "",
+        "filetype": "forcedglossary",
+        "trainid": "",
+        "lgparams2": true,
+        "service-endpoint": "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/e0759a16-77f3-44c8-a30b-5348a4c9a54e",
+        "x": 350,
+        "y": 440,
+        "wires": [
+            [
+                "b242e40d33b392b5"
+            ]
+        ]
+    },
+    {
+        "id": "287d451bd9039101",
+        "type": "switch",
+        "z": "8c07c84c901460eb",
+        "name": "Audio?",
+        "property": "telegram.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "voice",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "message",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 540,
+        "y": 80,
+        "wires": [
+            [
+                "6c07fa78d82ada85"
+            ],
+            [
+                "3e0a95af.e5f08a"
+            ]
+        ]
+    },
+    {
+        "id": "154167cd2f04b0b1",
+        "type": "change",
+        "z": "8c07c84c901460eb",
+        "name": "Salva estado",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "telegram",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "history",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 80,
+        "wires": [
+            [
+                "287d451bd9039101"
+            ]
+        ]
+    },
+    {
+        "id": "a6817c9855f6c4a6",
+        "type": "switch",
+        "z": "8c07c84c901460eb",
+        "name": "Retornar audio?",
+        "property": "telegram.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "voice",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "message",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 420,
+        "y": 360,
+        "wires": [
+            [
+                "5620e152a30bea0e"
+            ],
+            [
+                "855d2d1224166199"
+            ]
+        ]
+    },
+    {
+        "id": "b242e40d33b392b5",
+        "type": "change",
+        "z": "8c07c84c901460eb",
+        "name": "Restaura estado",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "telegram.content",
+                "tot": "msg"
+            },
+            {
+                "t": "move",
+                "p": "telegram",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "history",
+                "pt": "flow",
+                "to": "history",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 440,
+        "wires": [
+            [
+                "106e3553196519f9"
+            ]
+        ]
+    },
+    {
+        "id": "5620e152a30bea0e",
+        "type": "function",
+        "z": "8c07c84c901460eb",
+        "name": "Pega resposta",
+        "func": "msg.payload = msg.payload.output.generic[0].text;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 340,
+        "wires": [
+            [
+                "5a0b5809c2ab5afa",
+                "75c4f2320d83605c"
+            ]
+        ]
+    },
+    {
+        "id": "6c07fa78d82ada85",
+        "type": "change",
+        "z": "8c07c84c901460eb",
+        "name": "Pega URL do audio",
+        "rules": [
+            {
+                "t": "move",
+                "p": "telegram.weblink",
+                "pt": "msg",
+                "to": "url",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 60,
+        "wires": [
+            [
+                "8ae26b9fe21b8597"
+            ]
+        ]
+    },
+    {
+        "id": "8ae26b9fe21b8597",
+        "type": "http request",
+        "z": "8c07c84c901460eb",
+        "name": "GET URL Audio",
+        "method": "GET",
+        "ret": "bin",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 840,
+        "y": 120,
+        "wires": [
+            [
+                "716f7a75d6b0720c"
+            ]
+        ]
+    },
+    {
+        "id": "716f7a75d6b0720c",
+        "type": "watson-speech-to-text",
+        "z": "8c07c84c901460eb",
+        "name": "",
+        "alternatives": 1,
+        "speakerlabels": true,
+        "smartformatting": false,
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "custom-weight": "0.5",
+        "band": "NarrowbandModel",
+        "bandhidden": "NarrowbandModel",
+        "keywords": "",
+        "keywords-threshold": "0.5",
+        "word-confidence": false,
+        "password": "",
+        "apikey": "Jegc_ewvuqESEdef65wJUPjaT_39TlAAMxIZElUFEH4H",
+        "payload-response": true,
+        "streaming-mode": false,
+        "streaming-mute": true,
+        "auto-connect": false,
+        "discard-listening": false,
+        "disable-precheck": false,
+        "service-endpoint": "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/94e42c1e-33c9-4a78-8747-3f8b95f5277a",
+        "x": 840,
+        "y": 180,
+        "wires": [
+            [
+                "24ebd36b.04d1e4"
+            ]
+        ]
+    },
+    {
+        "id": "5a0b5809c2ab5afa",
+        "type": "watson-text-to-speech",
+        "z": "8c07c84c901460eb",
+        "name": "",
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "pt-BR_IsabelaV3Voice",
+        "voicehidden": "pt-BR_IsabelaV3Voice",
+        "format": "audio/ogg; codecs=opus",
+        "password": "",
+        "apikey": "0oqR26ZhJeLA6tK6rA8ZnP9MaWBnLY6uY8FfLZIGM_CN",
+        "payload-response": true,
+        "service-endpoint": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/0135093c-20b6-4d86-8c23-1f6b8fe072a7",
+        "x": 860,
+        "y": 340,
+        "wires": [
+            [
+                "b242e40d33b392b5"
+            ]
+        ]
+    },
+    {
+        "id": "75c4f2320d83605c",
+        "type": "change",
+        "z": "8c07c84c901460eb",
+        "name": "Restaura estado",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "telegram.content",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "telegram.type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "move",
+                "p": "telegram",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "history",
+                "pt": "flow",
+                "to": "history",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 500,
+        "wires": [
+            [
+                "106e3553196519f9"
+            ]
+        ]
+    },
+    {
+        "id": "043689058277f981",
+        "type": "debug",
+        "z": "8c07c84c901460eb",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "802e8986a91412bf",
+        "type": "telegram bot",
+        "botname": "diaana_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]
