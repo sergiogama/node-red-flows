@@ -1,0 +1,324 @@
+[
+    {
+        "id": "9f8d2ff04e28440f",
+        "type": "e-mail in",
+        "z": "a32db52877bf45c3",
+        "name": "",
+        "protocol": "IMAP",
+        "server": "imap.gmail.com",
+        "useSSL": true,
+        "autotls": "never",
+        "port": "993",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "box": "INBOX",
+        "disposition": "Read",
+        "criteria": "UNSEEN",
+        "repeat": "300",
+        "fetch": "auto",
+        "inputs": 0,
+        "x": 70,
+        "y": 120,
+        "wires": [
+            [
+                "89a94dd0ca262bfb"
+            ]
+        ]
+    },
+    {
+        "id": "89a94dd0ca262bfb",
+        "type": "function",
+        "z": "a32db52877bf45c3",
+        "name": "Assunto = 'GenAI'",
+        "func": "if (msg.topic == 'GenAI') {\n//    msg.payload = msg.payload.replace(/[\\r\\n]/gm, '').trim();\n//    msg.payload = msg.payload.replace(/\\n\\n/g, '');\n    msg.payload = msg.payload.replace(/data: /g, '');\n    msg.payload = msg.payload.replace(/data:/g, '');\n    return msg;\n}\nflow.set(\"nome\",msg.header.from.value[0].name);\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 120,
+        "wires": [
+            [
+                "4dc68e277124fc51"
+            ]
+        ]
+    },
+    {
+        "id": "de177a786e67ce30",
+        "type": "openai",
+        "z": "a32db52877bf45c3",
+        "name": "OpenAI",
+        "api": "",
+        "creds": "1d26833ca8b2489a",
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "306430201ee0e329"
+            ]
+        ]
+    },
+    {
+        "id": "d869fc244e8f52ae",
+        "type": "debug",
+        "z": "a32db52877bf45c3",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "4dc68e277124fc51",
+        "type": "function",
+        "z": "a32db52877bf45c3",
+        "name": "Parametros OpenAI",
+        "func": "msg.api = 'completions';\nvar prompt = \"Leia o e-mail abaixo e identifique, quando possível, 'NOME', 'E-MAIL', 'TELEFONE', 'SENTIMENTO'\";\nprompt += \", 'ELOGIO', 'OFENSA', 'NÚMERO DO PEDIDO', 'PROBLEMA'\";\nprompt += \", e quando uma informação não existir, traga 'VAZIO' como o dado, ex: {'SENTIMENTO':'VAZIO'}\\n\";\nprompt += \"Retorne no formato JSON. \\n\\nE-MAIL: \\n\"\nprompt += \"\\nFrom: \" + msg.from + \"\\n\\n\";\nmsg.params = {\n    \"model\": \"gpt-3.5-turbo-instruct\",\n    \"prompt\": prompt + msg.payload,\n    \"max_tokens\": 1000,\n    \"temperature\": 0.7\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 120,
+        "wires": [
+            [
+                "de177a786e67ce30"
+            ]
+        ]
+    },
+    {
+        "id": "306430201ee0e329",
+        "type": "function",
+        "z": "a32db52877bf45c3",
+        "name": "Resultado",
+        "func": "msg.payload = msg.payload.choices[0].text;\nmsg.payload = msg.payload.replace(/[\\r\\n]/gm, '').trim();\nmsg.payload = msg.payload.replace(/\\n\\n/g, '');\nmsg.payload = msg.payload.replace(/'/g, '\"');\n//msg.payload = msg.payload.replace(/data: /g, '');\n//msg.payload = msg.payload.replace(/data:/g, '');\n\n//msg.payload = JSON.parse(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 240,
+        "wires": [
+            [
+                "97e91a40eb397148"
+            ]
+        ]
+    },
+    {
+        "id": "97e91a40eb397148",
+        "type": "json",
+        "z": "a32db52877bf45c3",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 470,
+        "y": 240,
+        "wires": [
+            [
+                "d869fc244e8f52ae",
+                "68b45605635fb9a9"
+            ]
+        ]
+    },
+    {
+        "id": "68b45605635fb9a9",
+        "type": "function",
+        "z": "a32db52877bf45c3",
+        "name": "function 4",
+        "func": "// Function Node Code\nvar customerData = context.get('customerData') || [];\n\n// Assuming msg.payload is an object with customer data\nvar newCustomer = msg.payload;\n\n// Append the new customer data to the array\ncustomerData.push(newCustomer);\n\n// Store the updated array in the context\ncontext.set('customerData', customerData);\n\nmsg.payload = customerData;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "9024382d11cd3410",
+                "733fb6b79c3bdef5"
+            ]
+        ]
+    },
+    {
+        "id": "3dcfd4df24482796",
+        "type": "inject",
+        "z": "a32db52877bf45c3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"NOME\":\"Sergio Gama\",\"E-MAIL\":\"VAZIO\",\"TELEFONE\":\"11-94581-7571\",\"SENTIMENTO\":\"chateado\",\"ELOGIO\":\"VAZIO\",\"OFENSA\":\"VAZIO\",\"NÚMERO DO PEDIDO\":\"5423A2\",\"PROBLEMA\":\"mesa ainda não entregue\"}",
+        "payloadType": "json",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "68b45605635fb9a9"
+            ]
+        ]
+    },
+    {
+        "id": "9024382d11cd3410",
+        "type": "ui_table",
+        "z": "a32db52877bf45c3",
+        "group": "87d859483e04e1f7",
+        "name": "",
+        "order": 1,
+        "width": "22",
+        "height": "4",
+        "columns": [],
+        "outputs": 1,
+        "cts": true,
+        "x": 550,
+        "y": 320,
+        "wires": [
+            [
+                "58dcfb198e60401b"
+            ]
+        ]
+    },
+    {
+        "id": "df9adfd6dbf2ab54",
+        "type": "ui_template",
+        "z": "a32db52877bf45c3",
+        "group": "87d859483e04e1f7",
+        "name": "e-Mail",
+        "order": 1,
+        "width": "15",
+        "height": "7",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 750,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "733fb6b79c3bdef5",
+        "type": "function",
+        "z": "a32db52877bf45c3",
+        "name": "function 5",
+        "func": "msg.payload = msg.html;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 360,
+        "wires": [
+            [
+                "df9adfd6dbf2ab54",
+                "16c9b18351099924"
+            ]
+        ]
+    },
+    {
+        "id": "05a3f9f962a6134b",
+        "type": "e-mail",
+        "z": "a32db52877bf45c3",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 770,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "16c9b18351099924",
+        "type": "function",
+        "z": "a32db52877bf45c3",
+        "name": "function 6",
+        "func": "msg.payload = \"Olá, \" + flow.get(\"nome\") + \", \\n\\n\";\nmsg.payload += \"Muito obrigado pela presença em nosso evento, e fico muito grato pela colaboração nesta demo.\\n\\n\";\nmsg.payload += \"Esperamos que tenha gostado.\\n\\n\";\nmsg.to = msg.from;\nmsg.from = \"sergio.gama@200dev.com\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 180,
+        "wires": [
+            [
+                "05a3f9f962a6134b"
+            ]
+        ]
+    },
+    {
+        "id": "58dcfb198e60401b",
+        "type": "debug",
+        "z": "a32db52877bf45c3",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1d26833ca8b2489a",
+        "type": "openaiApiKey",
+        "name": ""
+    },
+    {
+        "id": "87d859483e04e1f7",
+        "type": "ui_group",
+        "name": "GenAI",
+        "tab": "f2cbbad60a2026e0",
+        "order": 1,
+        "disp": true,
+        "width": "22",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f2cbbad60a2026e0",
+        "type": "ui_tab",
+        "name": "200Dev.com",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
