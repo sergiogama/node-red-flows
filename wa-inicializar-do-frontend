@@ -1,0 +1,123 @@
+[
+    {
+        "id": "5eacef2f507ac194",
+        "type": "inject",
+        "z": "9066c43c3d410a08",
+        "name": "",
+        "props": [
+            {
+                "p": "additional_context",
+                "v": "{\"nome\":\"Gama\",\"telegram\":\"Ativo\"}",
+                "vt": "json"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Liga o modo de audio",
+        "payloadType": "str",
+        "x": 180,
+        "y": 120,
+        "wires": [
+            [
+                "4eb96cd6f2eb920d"
+            ]
+        ]
+    },
+    {
+        "id": "4eb96cd6f2eb920d",
+        "type": "watson-conversation-v1",
+        "z": "9066c43c3d410a08",
+        "name": "",
+        "workspaceid": "bdd0e0c3-d80e-4376-af14-66f03da90a2e",
+        "multiuser": false,
+        "context": true,
+        "empty-payload": true,
+        "service-endpoint": "https://api.us-south.assistant.watson.cloud.ibm.com/instances/81b32a79-de24-4f06-957b-f191bc7c1246",
+        "timeout": "",
+        "optout-learning": false,
+        "x": 420,
+        "y": 120,
+        "wires": [
+            [
+                "322fa292bffb4984"
+            ]
+        ]
+    },
+    {
+        "id": "322fa292bffb4984",
+        "type": "debug",
+        "z": "9066c43c3d410a08",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1dfe3ca850a8e289",
+        "type": "inject",
+        "z": "9066c43c3d410a08",
+        "name": "Desligar modo de mensagem",
+        "props": [
+            {
+                "p": "additional_context",
+                "v": "{\"nome\":\"Gama\",\"telegram\":\"Ativo\"}",
+                "vt": "json"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Voltar no modo de resposta padrão",
+        "payloadType": "str",
+        "x": 160,
+        "y": 160,
+        "wires": [
+            [
+                "4eb96cd6f2eb920d"
+            ]
+        ]
+    },
+    {
+        "id": "52604953d4c7df97",
+        "type": "inject",
+        "z": "9066c43c3d410a08",
+        "name": "Iniciar",
+        "props": [
+            {
+                "p": "additional_context",
+                "v": "{\"nome\":\"Gama\",\"system\":{\"initialized\":false}}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 230,
+        "y": 80,
+        "wires": [
+            [
+                "4eb96cd6f2eb920d"
+            ]
+        ]
+    }
+]
